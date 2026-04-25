@@ -176,6 +176,11 @@
         color: var(--muted);
       }
 
+      .page-two-start {
+        break-before: page;
+        page-break-before: always;
+      }
+
       @media print {
         .resume {
           width: auto;
@@ -190,6 +195,7 @@
         <p class="headline">Data Engineer | MES | Industrial IoT | Manufacturing Analytics</p>
         <p class="contact">
           <span><a href="mailto:roberto.gag117@gmail.com">roberto.gag117@gmail.com</a></span>
+          <span><a href="https://robertogag.github.io/">robertogag.github.io</a></span>
           <span><a href="https://www.linkedin.com/in/juan-roberto-garc%C3%ADa-g%C3%B3mez1/">LinkedIn</a></span>
           <span><a href="https://github.com/Robertogag">GitHub</a></span>
         </p>
@@ -264,7 +270,7 @@
         </article>
       </section>
 
-      <section class="section">
+      <section class="section page-two-start">
         <h2 class="section-title">Core Skills</h2>
         <ul class="skills">
           <li><strong>Data Engineering:</strong> PostgreSQL, SQL, ETL, data modeling, reporting logic, data quality.</li>

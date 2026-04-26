@@ -66,24 +66,24 @@ export const contentByLanguage = {
     },
     stats: [
       {
+        value: '90%',
+        label: 'less manual reporting',
+        detail: 'production now arrives in real time, while operators only add downtime and defect context',
+      },
+      {
+        value: '0 paper',
+        label: 'digital HR control',
+        detail: 'attendance and time-bank tracking now run through time-clock integration with no paper forms',
+      },
+      {
+        value: '24/7',
+        label: 'production plan visibility',
+        detail: 'leadership sees plan vs actual, stop causes and production running without plan',
+      },
+      {
         value: '34',
-        label: 'connected machines',
-        detail: 'live telemetry and plant monitoring',
-      },
-      {
-        value: '1',
-        label: 'centralized MES ecosystem',
-        detail: 'injection, assembly, tooling and plant execution',
-      },
-      {
-        value: 'OEE',
-        label: 'automated reporting logic',
-        detail: 'downtime, performance and quality visibility',
-      },
-      {
-        value: 'MX$15.2M',
-        label: 'recovered in one year',
-        detail: 'through claims analysis backed by structured data and evidence',
+        label: 'injection machines connected',
+        detail: 'Euromap63 and Modbus integration across ENGEL, WOOJIN and SUMITOMO machines',
       },
     ],
     showcase: {
@@ -380,24 +380,24 @@ export const contentByLanguage = {
     },
     stats: [
       {
+        value: '90%',
+        label: 'menos captura manual',
+        detail: 'la producci\u00f3n llega en tiempo real y el equipo solo agrega contexto de paros y defectos',
+      },
+      {
+        value: '0 papel',
+        label: 'control digital de RH',
+        detail: 'asistencias y banco de tiempo ahora corren con conexi\u00f3n al reloj checador y sin hojas',
+      },
+      {
+        value: '24/7',
+        label: 'visibilidad del plan',
+        detail: 'direcci\u00f3n ve plan vs real, causas de paro y producci\u00f3n corriendo sin plan',
+      },
+      {
         value: '34',
-        label: 'm\u00e1quinas conectadas',
-        detail: 'telemetr\u00eda viva y monitoreo de planta',
-      },
-      {
-        value: '1',
-        label: 'ecosistema MES centralizado',
-        detail: 'inyecci\u00f3n, ensamble, tooling y ejecuci\u00f3n de planta',
-      },
-      {
-        value: 'OEE',
-        label: 'l\u00f3gica de reporting automatizada',
-        detail: 'visibilidad de paros, performance y calidad',
-      },
-      {
-        value: 'MX$15.2M',
-        label: 'recuperados en un a\u00f1o',
-        detail: 'mediante an\u00e1lisis de claims respaldado por datos estructurados y evidencia',
+        label: 'm\u00e1quinas de inyecci\u00f3n conectadas',
+        detail: 'integraci\u00f3n Euromap63 y Modbus en m\u00e1quinas ENGEL, WOOJIN y SUMITOMO',
       },
     ],
     showcase: {

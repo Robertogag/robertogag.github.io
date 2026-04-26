@@ -709,6 +709,7 @@ export default function App() {
           <div className="footer-links">
             <a href={contactLinks.email} className="footer-link-icon" aria-label={contactLinks.emailLabel}>
               <Mail size={18} />
+              <span className="footer-link-label">{contactLinks.emailLabel}</span>
             </a>
             <a
               href={githubLinks.organisation}
@@ -718,6 +719,7 @@ export default function App() {
               aria-label="GitHub"
             >
               <Github size={18} />
+              <span className="footer-link-label">GitHub</span>
             </a>
             <a
               href={contactLinks.linkedin}
@@ -727,6 +729,7 @@ export default function App() {
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
+              <span className="footer-link-label">LinkedIn</span>
             </a>
           </div>
         </div>

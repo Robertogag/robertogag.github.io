@@ -140,7 +140,7 @@ export const contentByLanguage = {
       eyebrow: 'Selected work',
       title: 'Systems built for operation',
       description:
-        'Key modules, dashboards and business flows presented in a cleaner and easier-to-read layout.',
+        'MES modules, analytics, and business tools used in day-to-day plant operation.',
       previousLabel: 'Previous',
       nextLabel: 'Next',
       modulesTitle: 'MES modules',
@@ -454,7 +454,7 @@ export const contentByLanguage = {
       eyebrow: 'Trabajo seleccionado',
       title: 'Sistemas construidos para la operaci\u00f3n',
       description:
-        'M\u00f3dulos clave, dashboards y flujos de negocio presentados de forma m\u00e1s clara y f\u00e1cil de leer.',
+        'M\u00f3dulos MES, anal\u00edtica y herramientas de negocio usadas en la operaci\u00f3n diaria.',
       previousLabel: 'Anterior',
       nextLabel: 'Siguiente',
       modulesTitle: 'M\u00f3dulos MES',

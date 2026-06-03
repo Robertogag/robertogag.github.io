@@ -7,341 +7,405 @@
     <style>
       @page {
         size: A4;
-        margin: 13mm 14mm 14mm;
+        margin: 0;
       }
 
       :root {
-        --text: #111827;
-        --muted: #4b5563;
-        --soft: #6b7280;
-        --line: #d1d5db;
-        --strong-line: #9ca3af;
+        --ink: #0f172a;
+        --muted: #475569;
+        --soft: #64748b;
+        --line: #e2e8f0;
+        --accent: #0071e3;
+        --accent-dark: #0b3a66;
+        --sidebar-bg: #0f1b2d;
+        --sidebar-text: #cdd7e5;
+        --sidebar-soft: #8ea2bd;
+        --chip-bg: rgba(255, 255, 255, 0.08);
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
-      html,
-      body {
+      html, body {
         margin: 0;
         padding: 0;
         background: #ffffff;
-        color: var(--text);
-        font-family: Calibri, Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        font-family: "Segoe UI", Calibri, Arial, Helvetica, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      body {
-        font-size: 9.75pt;
-        line-height: 1.36;
+      body { font-size: 9.6pt; line-height: 1.4; }
+      a { color: inherit; text-decoration: none; }
+      p { margin: 0; }
+      ul { margin: 0; padding: 0; list-style: none; }
+
+      .sheet {
+        display: grid;
+        grid-template-columns: 67mm 1fr;
+        min-height: 297mm;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
+      /* ---------- Sidebar ---------- */
+      .sidebar {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-text);
+        padding: 0 0 8mm;
       }
 
-      .resume {
+      .photo-wrap {
+        position: relative;
+        height: 56mm;
+        overflow: hidden;
+        background: #1b2942;
+      }
+      .photo-wrap img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+      }
+      .photo-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(15, 27, 45, 0) 60%, rgba(15, 27, 45, 0.85) 100%);
       }
 
-      .header {
-        padding-bottom: 8px;
-        border-bottom: 1.6px solid var(--strong-line);
+      .side-block { padding: 0 9mm; margin-top: 6mm; }
+      .side-block:first-of-type { margin-top: 6mm; }
+
+      .side-title {
+        margin: 0 0 5px;
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #fff;
       }
+      .side-title::after {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin-top: 4px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+
+      .contact-list li {
+        display: flex;
+        gap: 7px;
+        align-items: flex-start;
+        margin-top: 6px;
+        font-size: 8.5pt;
+        color: var(--sidebar-text);
+        line-height: 1.35;
+        word-break: break-word;
+      }
+      .contact-list .ico {
+        flex: 0 0 auto;
+        width: 13px; height: 13px;
+        margin-top: 1px;
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 3px; }
+      .chip {
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: var(--chip-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 7.8pt;
+        color: #e7eefa;
+        white-space: nowrap;
+      }
+
+      .skill-group { margin-top: 8px; }
+      .skill-group:first-child { margin-top: 4px; }
+      .skill-group b {
+        display: block;
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .lang-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 6px;
+        font-size: 8.6pt;
+      }
+      .lang-row span:last-child { color: var(--sidebar-soft); font-size: 8pt; }
+
+      .side-edu li { margin-top: 8px; font-size: 8.4pt; line-height: 1.32; }
+      .side-edu li:first-child { margin-top: 3px; }
+      .side-edu b { display: block; color: #fff; font-weight: 700; }
+      .side-edu .note { color: var(--sidebar-soft); font-size: 7.8pt; }
+
+      /* ---------- Main column ---------- */
+      .main { padding: 9mm 10mm 7mm; }
 
       .name {
         margin: 0;
-        font-size: 22pt;
-        line-height: 1;
-        font-weight: 700;
-        letter-spacing: -0.015em;
+        font-size: 24pt;
+        line-height: 1.02;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--ink);
       }
-
       .headline {
-        margin: 4px 0 0;
-        font-size: 10.4pt;
+        margin: 5px 0 0;
+        font-size: 10.6pt;
         font-weight: 700;
-        color: var(--muted);
+        color: var(--accent-dark);
+      }
+      .rule {
+        height: 2px;
+        margin: 10px 0 0;
+        background: linear-gradient(90deg, var(--accent), #e2e8f0 70%);
+        border-radius: 2px;
       }
 
-      .contact {
-        margin: 6px 0 0;
-        color: var(--muted);
-        font-size: 9.1pt;
-        line-height: 1.45;
-      }
-
-      .contact span {
-        display: inline;
-      }
-
-      .contact span + span::before {
-        content: " | ";
-        color: var(--soft);
-      }
-
-      .section {
-        margin-top: 10px;
-      }
-
+      .section { margin-top: 9px; }
       .section-title {
-        margin: 0 0 6px;
-        padding-bottom: 3px;
-        border-bottom: 1px solid var(--line);
-        font-size: 9.4pt;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 7px;
+        font-size: 9.6pt;
+        font-weight: 800;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
+        color: var(--ink);
+      }
+      .section-title .dot {
+        width: 8px; height: 8px;
+        border-radius: 2px;
+        background: var(--accent);
       }
 
-      p {
-        margin: 0;
-      }
+      .summary { color: var(--muted); line-height: 1.5; }
 
-      .summary {
+      .impact { display: grid; gap: 5px; }
+      .impact li {
+        position: relative;
+        padding-left: 16px;
         color: var(--muted);
+        line-height: 1.42;
       }
-
-      .highlights {
-        margin: 0;
-        padding-left: 18px;
+      .impact li::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 5px;
+        width: 8px; height: 8px;
+        border-radius: 999px;
+        border: 2px solid var(--accent);
       }
+      .impact b { color: var(--ink); }
 
-      .highlights li + li,
-      .bullets li + li,
-      .education-list li + li {
-        margin-top: 3px;
-      }
-
-      .entry {
-        margin-top: 10px;
-        break-inside: avoid;
-      }
-
-      .entry:first-of-type {
-        margin-top: 0;
-      }
-
+      .entry { margin-top: 9px; break-inside: avoid; }
+      .entry:first-of-type { margin-top: 2px; }
       .entry-header {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 10px;
-        align-items: start;
+        align-items: baseline;
       }
-
-      .entry-title {
-        margin: 0;
-        font-size: 10.7pt;
-        font-weight: 700;
-        line-height: 1.25;
-      }
-
-      .entry-role {
-        margin-top: 1px;
-        color: var(--muted);
-        font-weight: 700;
-      }
-
+      .entry-title { margin: 0; font-size: 11pt; font-weight: 800; line-height: 1.2; }
+      .entry-role { margin-top: 1px; color: var(--accent-dark); font-weight: 700; font-size: 9.5pt; }
       .entry-date {
         color: var(--soft);
-        font-size: 9.1pt;
+        font-size: 8.4pt;
+        font-weight: 600;
         white-space: nowrap;
+        padding: 2px 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
       }
+      .entry-summary { margin-top: 3px; color: var(--muted); line-height: 1.4; }
 
-      .entry-summary {
-        margin-top: 4px;
+      .bullets { margin: 5px 0 0; display: grid; gap: 3px; }
+      .bullets li {
+        position: relative;
+        padding-left: 14px;
         color: var(--muted);
+        line-height: 1.4;
       }
-
-      .bullets {
-        margin: 5px 0 0;
-        padding-left: 16px;
+      .bullets li::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 6px;
+        width: 5px; height: 5px;
+        border-radius: 999px;
+        background: var(--accent);
       }
-
-      .skills {
-        margin: 0;
-        padding-left: 0;
-        list-style: none;
-      }
-
-      .skills li + li {
-        margin-top: 4px;
-      }
-
-      .skills strong {
-        font-weight: 700;
-      }
-
-      .education-list {
-        margin: 0;
-        padding-left: 16px;
-      }
-
-      .education-note {
-        color: var(--muted);
-      }
-
-      .page-two-start {
-        break-before: page;
-        page-break-before: always;
-      }
-
-      .highlights li,
-      .bullets li,
-      .skills li,
-      .education-list li {
-        line-height: 1.34;
-      }
-
-      @media print {
-        .resume {
-          width: auto;
-        }
-      }
+      .bullets b { color: var(--ink); }
     </style>
   </head>
   <body>
-    <main class="resume">
-      <header class="header">
+    <div class="sheet">
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="sidebar">
+        <div class="photo-wrap">
+          <img src="profile-photo.jpg" alt="Juan Roberto Garc&iacute;a G&oacute;mez" />
+        </div>
+
+        <div class="side-block">
+          <h2 class="side-title">Contact</h2>
+          <ul class="contact-list">
+            <li>
+              <svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+              <a href="mailto:roberto.gag117@gmail.com">roberto.gag117@gmail.com</a>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>San Luis Potos&iacute;, Mexico</span>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
+              <a href="https://robertogag.github.io/">robertogag.github.io</a>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4"/></svg>
+              <a href="https://www.linkedin.com/in/juan-roberto-garc%C3%ADa-g%C3%B3mez1/">LinkedIn /juan-roberto-garc&iacute;a</a>
+            </li>
+            <li>
+              <svg class="ico" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5a3 3 0 0 0-.9-2.4c3-.3 6-1.5 6-6.5a5 5 0 0 0-1.4-3.5 4.6 4.6 0 0 0-.1-3.5s-1.1-.3-3.6 1.4a12 12 0 0 0-6.4 0C6.6 1.3 5.5 1.6 5.5 1.6A4.6 4.6 0 0 0 5.4 5 5 5 0 0 0 4 8.5c0 5 3 6.2 6 6.5a3 3 0 0 0-.9 2.3V21"/></svg>
+              <a href="https://github.com/Robertogag">github.com/Robertogag</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="side-block">
+          <h2 class="side-title">Core Stack</h2>
+          <div class="chips">
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">React</span>
+            <span class="chip">Vite</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Socket.IO</span>
+            <span class="chip">ETL</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">OEE</span>
+            <span class="chip">Modbus</span>
+            <span class="chip">EUROMAP63</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <h2 class="side-title">Skills</h2>
+          <div class="skill-group">
+            <b>Data Engineering</b>
+            <span style="font-size:8.4pt;color:var(--sidebar-text)">Data modeling, ETL, reporting logic, data quality.</span>
+          </div>
+          <div class="skill-group">
+            <b>Manufacturing Systems</b>
+            <span style="font-size:8.4pt;color:var(--sidebar-text)">MES, Industrial IoT, downtime, plan adherence, cycle time.</span>
+          </div>
+          <div class="skill-group">
+            <b>Business / Operations</b>
+            <span style="font-size:8.4pt;color:var(--sidebar-text)">Requirements translation, process standardization, executive reporting.</span>
+          </div>
+        </div>
+
+        <div class="side-block">
+          <h2 class="side-title">Languages</h2>
+          <div class="lang-row"><span>Spanish</span><span>Native</span></div>
+          <div class="lang-row"><span>English</span><span>Professional</span></div>
+        </div>
+
+        <div class="side-block">
+          <h2 class="side-title">Education</h2>
+          <ul class="side-edu">
+            <li><b>Full Stack Web Development</b><span class="note">KeepCoding &middot; 2025 &ndash; Present</span></li>
+            <li><b>Business Analytics</b><span class="note">Tecnol&oacute;gico de Monterrey &middot; 2025</span></li>
+            <li><b>Big Data, AI &amp; Machine Learning</b><span class="note">KeepCoding &middot; 2023 &ndash; 2024</span></li>
+            <li><b>BA, Economics</b><span class="note">UASLP &middot; 2018 &ndash; 2023</span></li>
+            <li><b>Industrial &amp; Logistics Engineering</b><span class="note">UNID &middot; 2014 &ndash; 2017</span></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- ============ MAIN ============ -->
+      <main class="main">
         <h1 class="name">Juan Roberto Garc&iacute;a G&oacute;mez</h1>
-        <p class="headline">Data Engineer | MES | Industrial IoT | Manufacturing Analytics</p>
-        <p class="contact">
-          <span><a href="mailto:roberto.gag117@gmail.com">roberto.gag117@gmail.com</a></span>
-          <span><a href="https://robertogag.github.io/">Portfolio: robertogag.github.io</a></span>
-          <span><a href="https://www.linkedin.com/in/juan-roberto-garc%C3%ADa-g%C3%B3mez1/">LinkedIn</a></span>
-          <span><a href="https://github.com/Robertogag">GitHub</a></span>
-          <span>Location: Mexico</span>
-        </p>
-      </header>
+        <p class="headline">Data Engineer &middot; MES &middot; Industrial IoT &middot; Manufacturing Analytics</p>
+        <div class="rule"></div>
 
-      <section class="section">
-        <h2 class="section-title">Professional Summary</h2>
-        <p class="summary">
-          Data Engineer specializing in MES, Industrial IoT, and manufacturing analytics, with
-          experience building production-ready systems that connect shopfloor execution, structured
-          data, and management decision-making. Hands-on delivery experience spans PostgreSQL, SQL,
-          ETL, Node.js, React, Power BI, and operational dashboards for manufacturing environments.
-          Combines technical implementation, manufacturing logic, analytics, and business
-          communication to support data-driven plant operations and management visibility.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Selected Impact</h2>
-        <ul class="highlights">
-          <li>Built and deployed a web-based MES used daily across plant operations, supporting Injection, Assembly, EPC, and execution workflows.</li>
-          <li>Integrated 34 machines into real-time dashboards, historical analysis, and operational reporting workflows.</li>
-          <li>Recovered MX$15.2M in logistics claims within one year through structured analysis and evidence management.</li>
-          <li>Delivered Power BI dashboards that reduced analysis time by 40% and improved management visibility.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <h3 class="entry-title">Chunil Mexico</h3>
-              <div class="entry-role">Data Engineer | MES &amp; Manufacturing Analytics</div>
-            </div>
-            <div class="entry-date">Oct 2024 - Present</div>
-          </div>
-
-          <p class="entry-summary">
-            Responsible for building production-ready manufacturing systems and analytics workflows
-            that support daily plant execution, visibility, and management follow-up.
+        <section class="section">
+          <h2 class="section-title"><span class="dot"></span>Professional Summary</h2>
+          <p class="summary">
+            Data Engineer specializing in MES, Industrial IoT and manufacturing analytics. I build
+            production-ready systems that connect machines, shopfloor execution, structured data and
+            management visibility &mdash; designing PostgreSQL models, Node.js services, React
+            applications and Power BI dashboards that replace manual reporting with live plant data.
           </p>
+        </section>
 
-          <ul class="bullets">
-            <li>Designed and deployed a web-based MES that replaced spreadsheet-based production control with centralized workflows across Injection, Assembly, EPC, Tooling, Quality, Maintenance, and plant execution.</li>
-            <li>Built PostgreSQL data models and Node.js services for machines, parts, molds, shifts, cycle times, production targets, downtime, quality, and reporting.</li>
-            <li>Integrated 34 injection machines into real-time monitoring, historical analysis, and automated reporting workflows.</li>
-            <li>Developed React applications and Power BI dashboards for OEE, plan adherence, downtime, quality, production control, and management visibility.</li>
-            <li>Supported Industrial IoT integration using machine data to improve visibility into running status, cycle counts, production performance, and downtime.</li>
-            <li>Automated shift-level reporting and management follow-up to reduce manual reporting effort and improve operational response.</li>
-            <li>Partnered with operations, quality, maintenance, and leadership teams to translate manufacturing requirements into production-ready systems.</li>
-            <li>Helped establish a data-driven operating model across plant execution, reporting, and continuous improvement.</li>
+        <section class="section">
+          <h2 class="section-title"><span class="dot"></span>Selected Impact</h2>
+          <ul class="impact">
+            <li><b>Reduced manual production reporting by 90%</b> by capturing machine output in real time, leaving operators responsible only for downtime and defect context.</li>
+            <li><b>Connected 34 injection machines</b> through EUROMAP63 and Modbus across ENGEL, WOOJIN and SUMITOMO platforms.</li>
+            <li><b>Delivered 24/7 plan-vs-actual visibility</b> for leadership, including stop causes, machine status and unplanned production detection.</li>
+            <li><b>Unified 6 plant areas</b> &mdash; injection, assembly, EPC, tooling, quality and maintenance &mdash; in one connected MES + ERP platform.</li>
           </ul>
-        </article>
+        </section>
 
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <h3 class="entry-title">Ram&iacute;rez Valle &amp; Asociados | General Motors SLP Account</h3>
-              <div class="entry-role">Claims, Loss &amp; Recovery Coordinator</div>
+        <section class="section">
+          <h2 class="section-title"><span class="dot"></span>Professional Experience</h2>
+
+          <article class="entry">
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-title">Chunil Mexico</h3>
+                <div class="entry-role">Data Engineer &middot; MES &amp; Manufacturing Analytics</div>
+              </div>
+              <div class="entry-date">Oct 2024 &ndash; Present</div>
             </div>
-            <div class="entry-date">Oct 2023 - 2024</div>
-          </div>
+            <p class="entry-summary">
+              Designed and shipped production-ready manufacturing systems and analytics that support
+              daily plant execution, visibility and management follow-up.
+            </p>
+            <ul class="bullets">
+              <li>Designed and deployed a web-based <b>MES</b> that replaced spreadsheet control with centralized workflows across Injection, Assembly, EPC, Tooling, Quality and Maintenance.</li>
+              <li>Built <b>PostgreSQL</b> data models and <b>Node.js</b> services for machines, parts, molds, shifts, cycle times, targets, downtime, quality and reporting.</li>
+              <li>Reduced manual production reporting by <b>90%</b> by integrating live machine output into the system.</li>
+              <li>Integrated <b>34 injection machines</b> via EUROMAP63 and Modbus across ENGEL, WOOJIN and SUMITOMO equipment.</li>
+              <li>Developed <b>React</b> apps and <b>Power BI</b> dashboards for OEE, plan adherence, downtime, quality and management visibility.</li>
+              <li>Digitized HR incidence and attendance workflows with time-clock integration, eliminating paper-based tracking.</li>
+            </ul>
+          </article>
 
-          <p class="entry-summary">
-            Role focused on operational analytics, financial recovery, evidence control, supplier
-            follow-up, and management reporting.
-          </p>
-
-          <ul class="bullets">
-            <li>Recovered MX$15.2M in logistics claims within one year through structured case analysis and evidence management.</li>
-            <li>Managed 100+ investigations across claims, supplier follow-up, evidence control, and executive reporting.</li>
-            <li>Built Power BI dashboards that reduced analysis time by 40% and improved visibility into recovery status.</li>
-            <li>Standardized documentation, tracking, and review routines to improve resolution time and reporting consistency.</li>
-            <li>Connected operational evidence, financial impact, and management reporting to support decision-making.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="section page-two-start">
-        <h2 class="section-title">Core Skills</h2>
-        <ul class="skills">
-          <li><strong>Data Engineering:</strong> PostgreSQL, SQL, ETL, data modeling, reporting logic, data quality.</li>
-          <li><strong>Software Development:</strong> Node.js, Express, React, Vite, REST APIs, and operational web applications.</li>
-          <li><strong>Manufacturing Systems:</strong> MES, Industrial IoT, OEE, downtime, plan adherence, cycle time analysis, and quality reporting.</li>
-          <li><strong>Analytics:</strong> Power BI, KPI design, dashboard development, operational performance analysis.</li>
-          <li><strong>Business / Operations:</strong> stakeholder communication, requirements translation, process standardization, and executive reporting.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Education &amp; Professional Training</h2>
-        <ul class="education-list">
-          <li>
-            <strong>Full Stack Web Development Bootcamp, KeepCoding</strong>
-            <span class="education-note"> | Nov 2025 - Present</span>
-          </li>
-          <li>
-            <strong>Business Analytics, Tecnol&oacute;gico de Monterrey</strong>
-            <span class="education-note"> | Jan 2025 - Apr 2025</span>
-          </li>
-          <li>
-            <strong>Big Data, Artificial Intelligence &amp; Machine Learning Bootcamp, KeepCoding</strong>
-            <span class="education-note"> | Jun 2023 - Jun 2024</span>
-          </li>
-          <li>
-            <strong>Diploma in Property and Casualty Claims, Instituto Mexicano Educativo de Seguros y Fianzas</strong>
-            <span class="education-note"> | Feb 2024 - Nov 2024</span>
-          </li>
-          <li>
-            <strong>Python for Data Science, IICO</strong>
-            <span class="education-note"> | May 2022 - Aug 2022</span>
-          </li>
-          <li>
-            <strong>Bachelor's Degree in Economics, Universidad Aut&oacute;noma de San Luis Potos&iacute;</strong>
-            <span class="education-note"> | Aug 2018 - Jul 2023</span>
-          </li>
-          <li>
-            <strong>Bachelor's Degree in Industrial &amp; Logistics Engineering, Universidad Interamericana para el Desarrollo</strong>
-            <span class="education-note"> | Aug 2014 - Jul 2017</span>
-          </li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Languages</h2>
-        <ul class="skills">
-          <li><strong>Spanish:</strong> Native</li>
-          <li><strong>English:</strong> Professional working proficiency</li>
-        </ul>
-      </section>
-    </main>
+          <article class="entry">
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-title">Ram&iacute;rez Valle &amp; Asociados &middot; General Motors SLP</h3>
+                <div class="entry-role">Claims, Loss &amp; Recovery Coordinator</div>
+              </div>
+              <div class="entry-date">Oct 2023 &ndash; 2024</div>
+            </div>
+            <p class="entry-summary">
+              Operational analytics role focused on financial recovery, evidence control and management reporting.
+            </p>
+            <ul class="bullets">
+              <li>Recovered <b>MX$15.2M</b> in logistics claims within one year through structured case analysis and evidence management.</li>
+              <li>Managed <b>100+ investigations</b> across claims, supplier follow-up and executive reporting.</li>
+              <li>Built <b>Power BI</b> dashboards that reduced analysis time by 40% and improved recovery visibility.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

@@ -616,6 +616,50 @@ export default function App() {
           </div>
         </section>
 
+        {/* BOOTCAMP PROJECTS */}
+        <section className="section">
+          <Reveal>
+            <SectionHeading
+              eyebrow={content.extraProjects.eyebrow}
+              title={content.extraProjects.title}
+              description={content.extraProjects.description}
+            />
+          </Reveal>
+          <div className="recognition-grid">
+            {content.extraProjects.items.map((item, index) => (
+              <Reveal key={item.title} className="recognition-card" delay={index * 0.05}>
+                <button
+                  type="button"
+                  className="recognition-media media-button"
+                  onClick={() => setZoomedImage({ src: item.image, alt: item.alt })}
+                  aria-label={`${content.imageZoomLabel}: ${item.alt}`}
+                >
+                  <img src={item.image} alt={item.alt} loading="lazy" decoding="async" />
+                  <span className="media-zoom-indicator" aria-hidden="true">
+                    <ZoomIn size={18} />
+                  </span>
+                </button>
+                <div className="recognition-copy">
+                  <span>{item.kicker}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  {item.projectUrl ? (
+                    <a
+                      className="showcase-link"
+                      href={item.projectUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Github size={16} />
+                      {content.extraProjects.linkLabel}
+                    </a>
+                  ) : null}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
         {/* EDUCATION */}
         <section className="section" id="education">
           <Reveal>

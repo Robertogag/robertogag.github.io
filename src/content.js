@@ -20,6 +20,7 @@ export const portfolioAssets = {
   mesHome: `${C}/mes-home.jpg`,
   mesRealtime: `${C}/mes-realtime-dashboard.png`,
   mesShiftAnalytics: '/assets/images/weekly-plan-progress-realtime.png',
+  mesTelemetry: '/assets/images/telemetry.png',
   mesLineStopHistory: '/assets/images/mes-line-stop-history.png',
   mesInjectionData: `${C}/mes-injection-data.png`,
   mesAssemblyData: `${C}/mes-assembly-data.png`,
@@ -159,6 +160,14 @@ export const contentByLanguage = {
           image: portfolioAssets.mesShiftAnalytics,
           alt: 'Shift analytics dashboard with live plan adherence by part',
           description: 'Real-time shift-level dashboard showing plan adherence, part-by-part progress and weekly target execution.',
+        },
+        {
+          title: 'Machine Telemetry',
+          subtitle: 'Cycle time and process variables',
+          browserLabel: 'mes.chunil.mx/realtime-data/telemetry',
+          image: portfolioAssets.mesTelemetry,
+          alt: 'Injection telemetry table with cycle time and process variables',
+          description: 'Live telemetry view with cycle time, fill time, dose time, pressure peaks and shot-by-shot machine process data.',
         },
         {
           title: 'Line Stop History',
@@ -601,6 +610,14 @@ export const contentByLanguage = {
           image: portfolioAssets.mesShiftAnalytics,
           alt: 'Dashboard de Shift Analytics con adherencia al plan por parte',
           description: 'Dashboard en tiempo real por turno que muestra adherencia al plan, avance por parte y ejecución del objetivo semanal.',
+        },
+        {
+          title: 'Telemetría',
+          subtitle: 'Tiempo ciclo y variables de proceso',
+          browserLabel: 'mes.chunil.mx/realtime-data/telemetry',
+          image: portfolioAssets.mesTelemetry,
+          alt: 'Tabla de telemetría de inyección con tiempo ciclo y variables de proceso',
+          description: 'Vista de telemetría en vivo con tiempo ciclo, fill time, dose time, picos de presión y datos de proceso por disparo.',
         },
         {
           title: 'Historial de paros de línea',

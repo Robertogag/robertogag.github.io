@@ -103,10 +103,11 @@ function BrowserFrame({ src, alt, onZoom, zoomLabel, className }) {
   );
 }
 
-function SystemCard({ item, delay = 0, onZoom, zoomLabel }) {
+function SystemCard({ item, delay = 0, onZoom, zoomLabel, frameVariant }) {
   return (
     <Reveal className="system-card" delay={delay}>
       <BrowserFrame
+        className={frameVariant === 'phone' ? 'phone-frame' : undefined}
         src={item.image}
         alt={item.alt}
         onZoom={onZoom}
@@ -121,7 +122,7 @@ function SystemCard({ item, delay = 0, onZoom, zoomLabel }) {
   );
 }
 
-function Carousel({ items, previousLabel, nextLabel, onZoom, zoomLabel, columns = 'auto' }) {
+function Carousel({ items, previousLabel, nextLabel, onZoom, zoomLabel, columns = 'auto', frameVariant }) {
   const trackRef = useRef(null);
   const showControls = columns === 'auto';
 
@@ -163,6 +164,7 @@ function Carousel({ items, previousLabel, nextLabel, onZoom, zoomLabel, columns 
             delay={index * 0.04}
             onZoom={onZoom}
             zoomLabel={zoomLabel}
+            frameVariant={frameVariant}
           />
         ))}
       </div>
@@ -472,6 +474,7 @@ export default function App() {
             onZoom={setZoomedImage}
             zoomLabel={content.imageZoomLabel}
             columns="auto"
+            frameVariant="phone"
           />
           {content.scanner.footnote ? (
             <Reveal className="scanner-footnote" delay={0.05}>

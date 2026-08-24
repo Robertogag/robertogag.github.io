@@ -15,7 +15,6 @@ import {
   GraduationCap,
   Languages,
   Linkedin,
-  Lock,
   Mail,
   ScanSearch,
   X,
@@ -83,24 +82,12 @@ function LanguageSwitch({ label, language, onChange }) {
 }
 
 /**
- * Uniform browser-window chrome around every screenshot. This is what gives the
- * whole gallery a single, coherent look regardless of each screenshot's native
- * aspect ratio — the image sits in a fixed 16:10 stage with a consistent frame.
+ * Uniform frame around every screenshot — a plain rounded image in a fixed
+ * 16:10 stage so mismatched native aspect ratios still look coherent.
  */
-function BrowserFrame({ src, alt, label, onZoom, zoomLabel, className }) {
+function BrowserFrame({ src, alt, onZoom, zoomLabel, className }) {
   return (
     <div className={['browser-frame', className].filter(Boolean).join(' ')}>
-      <div className="browser-bar">
-        <span className="browser-dots" aria-hidden="true">
-          <i /><i /><i />
-        </span>
-        {label ? (
-          <span className="browser-url">
-            <Lock size={11} aria-hidden="true" />
-            {label}
-          </span>
-        ) : null}
-      </div>
       <button
         type="button"
         className="browser-stage media-button"
@@ -122,7 +109,6 @@ function SystemCard({ item, delay = 0, onZoom, zoomLabel }) {
       <BrowserFrame
         src={item.image}
         alt={item.alt}
-        label={item.browserLabel}
         onZoom={onZoom}
         zoomLabel={zoomLabel}
       />
@@ -418,7 +404,6 @@ export default function App() {
               className="featured-frame"
               src={content.mes.featured.image}
               alt={content.mes.featured.alt}
-              label={content.mes.featured.browserLabel}
               onZoom={setZoomedImage}
               zoomLabel={content.imageZoomLabel}
             />

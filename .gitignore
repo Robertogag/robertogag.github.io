@@ -2,3 +2,9 @@ node_modules
 dist
 01_assets
 02_cv
+
+# Capture tooling — never publish (tokens, raw unblurred screenshots)
+tmp
+_cap
+.capture-auth.json
+.capture-auth-erp.json

@@ -1,411 +1,185 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juan Roberto Garc&iacute;a G&oacute;mez | CV</title>
-    <style>
-      @page {
-        size: A4;
-        margin: 0;
-      }
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Juan Roberto García Gómez — CV</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><style>
+@page { size: Letter; margin: 0; }
+:root { --ink:#0b1324; --text:#2f3b4e; --muted:#5f6b7d; --line:#dfe4ec; --accent:#0b5cd5; --accent-ink:#0a3b7d; --tint:#f3f6fb; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: Inter, 'Segoe UI', Arial, sans-serif; color: var(--text); font-size: 8.75pt; line-height: 1.42;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; font-feature-settings: 'tnum' 0, 'ss01' 1; }
+a { color: inherit; text-decoration: none; }
+b { color: var(--ink); font-weight: 650; }
+.page { position: relative; width: 8.5in; height: 11in; padding: 0.42in 0.5in 0.6in; overflow: hidden; break-after: page; }
+.page:last-child { break-after: auto; }
+h1, h2, h3, .kpi strong, .project-name, .job-title { font-family: 'Space Grotesk', Inter, sans-serif; color: var(--ink); }
 
-      :root {
-        --ink: #0f172a;
-        --muted: #475569;
-        --soft: #64748b;
-        --line: #e2e8f0;
-        --accent: #0071e3;
-        --accent-dark: #0b3a66;
-        --sidebar-bg: #0f1b2d;
-        --sidebar-text: #cdd7e5;
-        --sidebar-soft: #8ea2bd;
-        --chip-bg: rgba(255, 255, 255, 0.08);
-      }
+.header { display: grid; grid-template-columns: 26mm 1fr; gap: 6mm; align-items: center; }
+.photo { width: 26mm; height: 30mm; border-radius: 3.5mm; object-fit: cover; object-position: center 18%; display: block; }
+h1 { margin: 0; font-size: 24.5pt; line-height: 1; letter-spacing: -0.02em; font-weight: 700; }
+.headline { margin: 2mm 0 0; color: var(--accent); font-weight: 600; font-size: 10.6pt; letter-spacing: -0.005em; }
+.contact { display: flex; flex-wrap: wrap; gap: 1.3mm 4.6mm; margin-top: 3.2mm; font-size: 8.2pt; color: var(--text); }
+.contact span { display: inline-flex; align-items: center; gap: 1.3mm; white-space: nowrap; }
+.contact svg, .link svg { width: 3.1mm; height: 3.1mm; flex: 0 0 auto; fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-      * { box-sizing: border-box; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 5.5mm; border-top: 0.55mm solid var(--ink); border-bottom: 0.25mm solid var(--line); }
+.kpi { padding: 2.8mm 3mm 2.8mm 0; }
+.kpi + .kpi { padding-left: 3.6mm; border-left: 0.25mm solid var(--line); }
+.kpi strong { display: block; font-size: 17.5pt; line-height: 1; color: var(--accent); font-weight: 700; letter-spacing: -0.02em; }
+.kpi span { display: block; margin-top: 1.3mm; font-size: 7.7pt; color: var(--text); line-height: 1.3; }
 
-      html, body {
-        margin: 0;
-        padding: 0;
-        background: #ffffff;
-        color: var(--ink);
-        font-family: "Segoe UI", Calibri, Arial, Helvetica, sans-serif;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
+h2 { display: flex; align-items: center; gap: 2.5mm; margin: 0 0 2.4mm; font-size: 8.6pt; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+h2::after { content: ''; flex: 1; height: 0.25mm; background: var(--line); }
+section + section { margin-top: 4.4mm; }
 
-      body { font-size: 9.6pt; line-height: 1.4; }
-      a { color: inherit; text-decoration: none; }
-      p { margin: 0; }
-      ul { margin: 0; padding: 0; list-style: none; }
+.summary { margin-top: 4.2mm; }
+.summary p { margin: 0; font-size: 9.1pt; line-height: 1.52; }
 
-      .sheet {
-        display: grid;
-        grid-template-columns: 67mm 1fr;
-        min-height: 297mm;
-      }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) 52mm; gap: 6.5mm; margin-top: 4.4mm; align-items: start; }
+.platform { margin-top: 5mm; }
+.platform dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.2mm 5.5mm; }
+.platform dl > div { padding-top: 2mm; border-top: 0.45mm solid var(--accent); }
+.platform dt { color: var(--accent-ink); font-weight: 700; font-size: 7.6pt; letter-spacing: 0.08em; text-transform: uppercase; }
+.platform dd { margin: 0.8mm 0 0; font-size: 8pt; line-height: 1.42; }
+.cols.page2 { margin-top: 0; }
 
-      /* ---------- Sidebar ---------- */
-      .sidebar {
-        background: var(--sidebar-bg);
-        color: var(--sidebar-text);
-        padding: 0 0 8mm;
-      }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+.job-title { margin: 0; font-size: 12pt; font-weight: 700; letter-spacing: -0.01em; }
+.job-title em { font-style: normal; color: var(--accent); }
+.job-period { font-weight: 650; color: var(--ink); white-space: nowrap; font-size: 8.4pt; }
+.job-meta { margin-top: 0.5mm; color: var(--muted); font-size: 8.1pt; }
+.group { margin-top: 3mm; }
+.group h3 { margin: 0 0 1.4mm; font-size: 8.9pt; font-weight: 600; color: var(--accent-ink); font-family: Inter, sans-serif; }
 
-      .photo-wrap {
-        position: relative;
-        height: 56mm;
-        overflow: hidden;
-        background: #1b2942;
-      }
-      .photo-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-        display: block;
-      }
-      .photo-wrap::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(15, 27, 45, 0) 60%, rgba(15, 27, 45, 0.85) 100%);
-      }
+ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 1.25mm; }
+li { position: relative; padding-left: 3.5mm; }
+li::before { content: ''; position: absolute; left: 0.2mm; top: 1.55mm; width: 1.25mm; height: 1.25mm; background: var(--accent); transform: rotate(45deg); }
 
-      .side-block { padding: 0 9mm; margin-top: 6mm; }
-      .side-block:first-of-type { margin-top: 6mm; }
+.aside h2 { margin-bottom: 2mm; }
+.skill + .skill { margin-top: 2.2mm; }
+.skill h4 { margin: 0 0 0.6mm; font-size: 7.6pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); font-weight: 700; }
+.skill p { margin: 0; font-size: 8pt; line-height: 1.45; }
+.lang { display: flex; justify-content: space-between; gap: 3mm; font-size: 8.3pt; }
+.lang + .lang { margin-top: 1mm; }
+.lang span:last-child { color: var(--muted); text-align: right; }
 
-      .side-title {
-        margin: 0 0 5px;
-        font-size: 8pt;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #fff;
-      }
-      .side-title::after {
-        content: "";
-        display: block;
-        width: 22px;
-        height: 2px;
-        margin-top: 4px;
-        background: var(--accent);
-        border-radius: 2px;
-      }
+.edu + .edu { margin-top: 2.5mm; }
+.edu strong { display: block; color: var(--ink); font-size: 8.6pt; line-height: 1.3; }
+.edu span { display: block; font-size: 8pt; color: var(--text); line-height: 1.35; }
+.edu em { display: block; font-style: normal; font-size: 7.8pt; color: var(--accent-ink); font-weight: 600; }
 
-      .contact-list li {
-        display: flex;
-        gap: 7px;
-        align-items: flex-start;
-        margin-top: 6px;
-        font-size: 8.5pt;
-        color: var(--sidebar-text);
-        line-height: 1.35;
-        word-break: break-word;
-      }
-      .contact-list .ico {
-        flex: 0 0 auto;
-        width: 13px; height: 13px;
-        margin-top: 1px;
-        fill: none;
-        stroke: var(--accent);
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
+.page2-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 2.4mm; margin-bottom: 5mm; border-bottom: 0.55mm solid var(--ink); }
+.page2-head strong { font-family: 'Space Grotesk', sans-serif; color: var(--ink); font-size: 12pt; }
+.page2-head span { color: var(--accent); font-weight: 600; font-size: 8.6pt; }
 
-      .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 3px; }
-      .chip {
-        padding: 3px 8px;
-        border-radius: 999px;
-        background: var(--chip-bg);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 7.8pt;
-        color: #e7eefa;
-        white-space: nowrap;
-      }
+.project + .project { margin-top: 4.2mm; padding-top: 4.2mm; border-top: 0.25mm solid var(--line); }
+.project-top { display: flex; align-items: baseline; gap: 2.5mm; flex-wrap: wrap; }
+.project-name { font-size: 12pt; font-weight: 700; letter-spacing: -0.01em; }
+.project-tagline { font-weight: 600; color: var(--ink); font-size: 9pt; }
+.project-meta { margin-top: 0.6mm; color: var(--muted); font-size: 8pt; }
+.project p { margin: 1.6mm 0 0; }
+.project .quote { color: var(--accent-ink); font-style: italic; }
+.project .stack { font-size: 8pt; color: var(--muted); }
+.project .stack b { color: var(--ink); font-weight: 600; }
+.link { display: inline-flex; align-items: center; gap: 1.3mm; margin-top: 1.6mm; color: var(--accent); font-weight: 600; font-size: 8.2pt; }
 
-      .skill-group { margin-top: 8px; }
-      .skill-group:first-child { margin-top: 4px; }
-      .skill-group b {
-        display: block;
-        font-size: 8.2pt;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 4px;
-      }
+.prev { margin-top: 0; }
+.qr { margin-top: 5mm; padding: 3.5mm; border-radius: 3mm; background: var(--tint); display: grid; grid-template-columns: 20mm minmax(0, 1fr); gap: 2.4mm 3mm; align-items: center; }
+.qr svg { width: 20mm; height: 20mm; display: block; }
+.qr strong { display: block; color: var(--ink); font-size: 8.4pt; line-height: 1.25; }
+.qr span { display: block; font-size: 7.6pt; line-height: 1.35; margin-top: 0.8mm; }
+.qr a { grid-column: 1 / -1; display: block; color: var(--accent); font-weight: 600; font-size: 8.2pt; }
 
-      .lang-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 6px;
-        font-size: 8.6pt;
-      }
-      .lang-row span:last-child { color: var(--sidebar-soft); font-size: 8pt; }
-
-      .side-edu li { margin-top: 8px; font-size: 8.4pt; line-height: 1.32; }
-      .side-edu li:first-child { margin-top: 3px; }
-      .side-edu b { display: block; color: #fff; font-weight: 700; }
-      .side-edu .note { color: var(--sidebar-soft); font-size: 7.8pt; }
-
-      /* ---------- Main column ---------- */
-      .main { padding: 9mm 10mm 7mm; }
-
-      .name {
-        margin: 0;
-        font-size: 24pt;
-        line-height: 1.02;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: var(--ink);
-      }
-      .headline {
-        margin: 5px 0 0;
-        font-size: 10.6pt;
-        font-weight: 700;
-        color: var(--accent-dark);
-      }
-      .rule {
-        height: 2px;
-        margin: 10px 0 0;
-        background: linear-gradient(90deg, var(--accent), #e2e8f0 70%);
-        border-radius: 2px;
-      }
-
-      .section { margin-top: 9px; }
-      .section-title {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin: 0 0 7px;
-        font-size: 9.6pt;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--ink);
-      }
-      .section-title .dot {
-        width: 8px; height: 8px;
-        border-radius: 2px;
-        background: var(--accent);
-      }
-
-      .summary { color: var(--muted); line-height: 1.5; }
-
-      .impact { display: grid; gap: 5px; }
-      .impact li {
-        position: relative;
-        padding-left: 16px;
-        color: var(--muted);
-        line-height: 1.42;
-      }
-      .impact li::before {
-        content: "";
-        position: absolute;
-        left: 0; top: 5px;
-        width: 8px; height: 8px;
-        border-radius: 999px;
-        border: 2px solid var(--accent);
-      }
-      .impact b { color: var(--ink); }
-
-      .entry { margin-top: 9px; break-inside: avoid; }
-      .entry:first-of-type { margin-top: 2px; }
-      .entry-header {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 10px;
-        align-items: baseline;
-      }
-      .entry-title { margin: 0; font-size: 11pt; font-weight: 800; line-height: 1.2; }
-      .entry-role { margin-top: 1px; color: var(--accent-dark); font-weight: 700; font-size: 9.5pt; }
-      .entry-date {
-        color: var(--soft);
-        font-size: 8.4pt;
-        font-weight: 600;
-        white-space: nowrap;
-        padding: 2px 8px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-      }
-      .entry-summary { margin-top: 3px; color: var(--muted); line-height: 1.4; }
-
-      .bullets { margin: 5px 0 0; display: grid; gap: 3px; }
-      .bullets li {
-        position: relative;
-        padding-left: 14px;
-        color: var(--muted);
-        line-height: 1.4;
-      }
-      .bullets li::before {
-        content: "";
-        position: absolute;
-        left: 0; top: 6px;
-        width: 5px; height: 5px;
-        border-radius: 999px;
-        background: var(--accent);
-      }
-      .bullets b { color: var(--ink); }
-    </style>
-  </head>
-  <body>
-    <div class="sheet">
-      <!-- ============ SIDEBAR ============ -->
-      <aside class="sidebar">
-        <div class="photo-wrap">
-          <img src="profile-photo.jpg" alt="Juan Roberto Garc&iacute;a G&oacute;mez" />
-        </div>
-
-        <div class="side-block">
-          <h2 class="side-title">Contact</h2>
-          <ul class="contact-list">
-            <li>
-              <svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-              <a href="mailto:roberto.gag117@gmail.com">roberto.gag117@gmail.com</a>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span>San Luis Potos&iacute;, Mexico</span>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg>
-              <a href="https://robertogag.github.io/">robertogag.github.io</a>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4"/></svg>
-              <a href="https://www.linkedin.com/in/juan-roberto-garc%C3%ADa-g%C3%B3mez1/">LinkedIn /juan-roberto-garc&iacute;a</a>
-            </li>
-            <li>
-              <svg class="ico" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5a3 3 0 0 0-.9-2.4c3-.3 6-1.5 6-6.5a5 5 0 0 0-1.4-3.5 4.6 4.6 0 0 0-.1-3.5s-1.1-.3-3.6 1.4a12 12 0 0 0-6.4 0C6.6 1.3 5.5 1.6 5.5 1.6A4.6 4.6 0 0 0 5.4 5 5 5 0 0 0 4 8.5c0 5 3 6.2 6 6.5a3 3 0 0 0-.9 2.3V21"/></svg>
-              <a href="https://github.com/Robertogag">github.com/Robertogag</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="side-block">
-          <h2 class="side-title">Core Stack</h2>
-          <div class="chips">
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Node.js</span>
-            <span class="chip">React</span>
-            <span class="chip">Vite</span>
-            <span class="chip">REST APIs</span>
-            <span class="chip">Socket.IO</span>
-            <span class="chip">ETL</span>
-            <span class="chip">Power BI</span>
-            <span class="chip">OEE</span>
-            <span class="chip">Modbus</span>
-            <span class="chip">EUROMAP63</span>
+.footer { position: absolute; left: 0.5in; right: 0.5in; bottom: 0.3in; display: flex; justify-content: space-between; font-size: 7.4pt; color: var(--muted); border-top: 0.25mm solid var(--line); padding-top: 1.8mm; }
+</style></head><body>
+  <div class="page">
+    <header class="header">
+      <img class="photo" src="profile-photo.jpg" alt="">
+      <div>
+        <h1>Juan Roberto García Gómez</h1>
+        <p class="headline">MES / ERP Systems Engineer · Full-Stack Developer · Industrial IoT</p>
+        <div class="contact"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+524443295151">+52 444 329 5151</a></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:roberto.gag117@gmail.com">roberto.gag117@gmail.com</a></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><a href="https://www.linkedin.com/in/juan-roberto-garc%C3%ADa-g%C3%B3mez1/">linkedin.com/in/juan-roberto-garcía-gómez1</a></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5a3 3 0 0 0-.9-2.4c3-.3 6-1.5 6-6.5a5 5 0 0 0-1.4-3.5 4.6 4.6 0 0 0-.1-3.5s-1.1-.3-3.6 1.4a12 12 0 0 0-6.4 0C6.6 1.3 5.5 1.6 5.5 1.6A4.6 4.6 0 0 0 5.4 5 5 5 0 0 0 4 8.5c0 5 3 6.2 6 6.5a3 3 0 0 0-.9 2.3V21"/></svg><a href="https://github.com/Robertogag">github.com/Robertogag</a></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg><a href="https://robertogag.github.io/">robertogag.github.io</a></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>San Luis Potosí, México</span></div>
+      </div>
+    </header>
+    <div class="kpis"><div class="kpi"><strong>100%</strong><span>of the plant connected to the MES</span></div><div class="kpi"><strong>~62%</strong><span>under the approved US$118K budget</span></div><div class="kpi"><strong>~90%</strong><span>less manual production reporting</span></div><div class="kpi"><strong>66</strong><span>traceability points in an HQ-approved program</span></div></div>
+    <section class="summary"><h2>Profile</h2><p>IT Supervisor and full-stack engineer at a Korean automotive supplier (plastic injection and assembly). I designed, built and run the plant's in-house MES / ERP platform — from requirements to formal close, ~62% under budget — connecting 34 injection machines, 14 PLC assembly stations and 20 scanners into one data model. I now lead the plant's traceability program and a two-developer team, and stay hands-on in React, Node.js, Python, PostgreSQL and industrial protocols (EUROMAP 63, Modbus TCP, PLC).</p></section>
+    <div class="cols">
+      <main>
+        <section>
+          <h2>Experience</h2>
+          <div class="job-head">
+            <h3 class="job-title">IT Supervisor <em>· Chunil México</em></h3>
+            <span class="job-period">Nov 2024 – Present</span>
           </div>
-        </div>
-
-        <div class="side-block">
-          <h2 class="side-title">Skills</h2>
-          <div class="skill-group">
-            <b>Data Engineering</b>
-            <span style="font-size:8.4pt;color:var(--sidebar-text)">Data modeling, ETL, reporting logic, data quality.</span>
-          </div>
-          <div class="skill-group">
-            <b>Manufacturing Systems</b>
-            <span style="font-size:8.4pt;color:var(--sidebar-text)">MES, Industrial IoT, downtime, plan adherence, cycle time.</span>
-          </div>
-          <div class="skill-group">
-            <b>Business / Operations</b>
-            <span style="font-size:8.4pt;color:var(--sidebar-text)">Requirements translation, process standardization, executive reporting.</span>
-          </div>
-        </div>
-
-        <div class="side-block">
-          <h2 class="side-title">Languages</h2>
-          <div class="lang-row"><span>Spanish</span><span>Native</span></div>
-          <div class="lang-row"><span>English</span><span>Professional</span></div>
-        </div>
-
-        <div class="side-block">
-          <h2 class="side-title">Education</h2>
-          <ul class="side-edu">
-            <li><b>Full Stack Web Development</b><span class="note">KeepCoding &middot; 2025 &ndash; Present</span></li>
-            <li><b>Business Analytics</b><span class="note">Tecnol&oacute;gico de Monterrey &middot; 2025</span></li>
-            <li><b>Big Data, AI &amp; Machine Learning</b><span class="note">KeepCoding &middot; 2023 &ndash; 2024</span></li>
-            <li><b>BA, Economics</b><span class="note">UASLP &middot; 2018 &ndash; 2023</span></li>
-            <li><b>Industrial &amp; Logistics Engineering</b><span class="note">UNID &middot; 2014 &ndash; 2017</span></li>
-          </ul>
-        </div>
-      </aside>
-
-      <!-- ============ MAIN ============ -->
-      <main class="main">
-        <h1 class="name">Juan Roberto Garc&iacute;a G&oacute;mez</h1>
-        <p class="headline">Data Engineer &middot; MES &middot; Industrial IoT &middot; Manufacturing Analytics</p>
-        <div class="rule"></div>
-
-        <section class="section">
-          <h2 class="section-title"><span class="dot"></span>Professional Summary</h2>
-          <p class="summary">
-            Data Engineer specializing in MES, Industrial IoT and manufacturing analytics. I build
-            production-ready systems that connect machines, shopfloor execution, structured data and
-            management visibility &mdash; designing PostgreSQL models, Node.js services, React
-            applications and Power BI dashboards that replace manual reporting with live plant data.
-          </p>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title"><span class="dot"></span>Selected Impact</h2>
-          <ul class="impact">
-            <li><b>Reduced manual production reporting by 90%</b> by capturing machine output in real time, leaving operators responsible only for downtime and defect context.</li>
-            <li><b>Connected 34 injection machines</b> through EUROMAP63 and Modbus across ENGEL, WOOJIN and SUMITOMO platforms.</li>
-            <li><b>Delivered 24/7 plan-vs-actual visibility</b> for leadership, including stop causes, machine status and unplanned production detection.</li>
-            <li><b>Unified 6 plant areas</b> &mdash; injection, assembly, EPC, tooling, quality and maintenance &mdash; in one connected MES + ERP platform.</li>
-          </ul>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title"><span class="dot"></span>Professional Experience</h2>
-
-          <article class="entry">
-            <div class="entry-header">
-              <div>
-                <h3 class="entry-title">Chunil Mexico</h3>
-                <div class="entry-role">Data Engineer &middot; MES &amp; Manufacturing Analytics</div>
-              </div>
-              <div class="entry-date">Oct 2024 &ndash; Present</div>
-            </div>
-            <p class="entry-summary">
-              Designed and shipped production-ready manufacturing systems and analytics that support
-              daily plant execution, visibility and management follow-up.
-            </p>
-            <ul class="bullets">
-              <li>Designed and deployed a web-based <b>MES</b> that replaced spreadsheet control with centralized workflows across Injection, Assembly, EPC, Tooling, Quality and Maintenance.</li>
-              <li>Built <b>PostgreSQL</b> data models and <b>Node.js</b> services for machines, parts, molds, shifts, cycle times, targets, downtime, quality and reporting.</li>
-              <li>Reduced manual production reporting by <b>90%</b> by integrating live machine output into the system.</li>
-              <li>Integrated <b>34 injection machines</b> via EUROMAP63 and Modbus across ENGEL, WOOJIN and SUMITOMO equipment.</li>
-              <li>Developed <b>React</b> apps and <b>Power BI</b> dashboards for OEE, plan adherence, downtime, quality and management visibility.</li>
-              <li>Digitized HR incidence and attendance workflows with time-clock integration, eliminating paper-based tracking.</li>
-            </ul>
-          </article>
-
-          <article class="entry">
-            <div class="entry-header">
-              <div>
-                <h3 class="entry-title">Ram&iacute;rez Valle &amp; Asociados &middot; General Motors SLP</h3>
-                <div class="entry-role">Claims, Loss &amp; Recovery Coordinator</div>
-              </div>
-              <div class="entry-date">Oct 2023 &ndash; 2024</div>
-            </div>
-            <p class="entry-summary">
-              Operational analytics role focused on financial recovery, evidence control and management reporting.
-            </p>
-            <ul class="bullets">
-              <li>Recovered <b>MX$15.2M</b> in logistics claims within one year through structured case analysis and evidence management.</li>
-              <li>Managed <b>100+ investigations</b> across claims, supplier follow-up and executive reporting.</li>
-              <li>Built <b>Power BI</b> dashboards that reduced analysis time by 40% and improved recovery visibility.</li>
-            </ul>
-          </article>
+          <div class="job-meta">Korean automotive supplier · plastic injection and assembly · San Luis Potosí</div>
+          <div class="group"><h3>MES / ERP platform — built in-house, in production</h3><ul><li>Built the plant's MES / ERP platform in-house (React, Node.js / Express, Python, PostgreSQL, REST APIs) to replace spreadsheet control, delivering it <b>~62% under the approved US$118K budget</b>; vendors only handled legacy-PLC integration and cabling.</li><li>Connected <b>100% of the plant</b> — <b>34 injection machines</b> (ENGEL, WOOJIN, SUMITOMO) over EUROMAP 63 and Modbus TCP, <b>14 assembly stations</b> over PLC and <b>20 handheld scanners</b> — through Python microservices (collector, packager, reporting), unifying <b>6 plant areas</b> in one data model and cutting manual production reporting by <b>~90%</b>.</li><li>Added administrative modules now in production — HR incidences with BioTime time-clock data, a read-only CONTPAQi finance mirror (SQL Server), production planning, warehouse and purchasing — plus scheduled shift reports, Zebra ZPL labels and WhatsApp line-stop alerts.</li></ul></div><div class="group"><h3>Project management</h3><ul><li>Ran the MES as a formal project — requirements with Production, Quality, HR and Finance, vendor coordination and budget control — and <b>closed it in July 2026</b> with a final report to plant leadership and the CEO in Korea.</li><li>Leading the <b>end-to-end traceability project</b> (resin to finished good): business case and BOM for <b>66 points</b>, vendor comparison (ScanID, Higole, Xprinter, Zebra) against <b>US$206K–280K</b> integrator quotes, and <b>HQ approval (Sep 2026)</b> of a two-stage budget — ~US$3K pilot, ~US$64.5K fleet vs. a US$65K reference. Pilot now running on the floor with touch kiosks, label printers and in-house software, with status reports to leadership.</li></ul></div><div class="group"><h3>Team and plant IT</h3><ul><li><b>Hired and lead two developers</b>, managing work in Jira and code in Git / GitHub.</li><li>Administer plant IT — Microsoft 365 tenant, Cisco Meraki MX84 firewall, managed switches, servers, NAS backups and offboarding — and delivered a <b>network-security assessment and upgrade proposal</b> to leadership.</li></ul></div>
         </section>
       </main>
+      <aside class="aside">
+        <section>
+          <h2>Core skills</h2>
+          <div class="skill"><h4>Manufacturing systems</h4><p>MES · ERP integration · OEE · production planning · downtime tracking · lot traceability · quality / NG tracking · shop-floor kiosks · Zebra ZPL labels</p></div><div class="skill"><h4>Industrial IoT</h4><p>EUROMAP 63 · Modbus TCP · PLC integration (Siemens LOGO!, LS Electric) · machine data collection · real-time dashboards · Socket.IO / WebSocket</p></div><div class="skill"><h4>Software</h4><p>JavaScript · TypeScript · Python · React · Next.js · Vite · Node.js · Express · Fastify · FastAPI · REST APIs · React Native (Expo) · Electron · Tailwind CSS · MUI</p></div><div class="skill"><h4>Data</h4><p>PostgreSQL · SQL Server · Redis · data modeling · ETL · Power BI · Excel automation · D3.js</p></div><div class="skill"><h4>DevOps &amp; quality</h4><p>Git · GitHub · GitHub Actions · Docker · Google Cloud (Cloud Run, Cloud SQL) · pm2 · Windows services · TDD · Vitest · pytest · Playwright</p></div><div class="skill"><h4>IT &amp; management</h4><p>Project management · business cases · budgeting · vendor evaluation · stakeholder reporting · Jira · team leadership · Microsoft 365 · Cisco Meraki · network security · NAS backups</p></div>
+        </section>
+      </aside>
     </div>
-  </body>
-</html>
+    <div class="footer"><span>Juan Roberto García Gómez · roberto.gag117@gmail.com · +52 444 329 5151</span><span>Page 1 of 2</span></div>
+  </div>
+  <div class="page">
+    <div class="page2-head"><strong>Juan Roberto García Gómez</strong><span>MES / ERP Systems Engineer · Full-Stack Developer · Industrial IoT</span></div>
+    <div class="cols page2">
+      <main>
+        <section>
+          <h2>Projects</h2>
+          <div class="project">
+                <div class="project-top"><span class="project-name">OEE Live</span><span class="project-tagline">Real-time OEE monitoring for injection plants without an MES</span></div>
+                <div class="project-meta">KeepCoding Full Stack final project · 2026 · grade 9.5/10, difficulty 10/10</div>
+                <p>A Python collector polls 8 simulated injection machines over Modbus TCP every second; a FastAPI backend computes OEE per machine, shift and plant; a Next.js dashboard streams it live over WebSocket with downtime classification, alerts and Excel export. Deployed with Docker on Google Cloud; 298 automated tests.</p>
+                <p class="quote">Rated by the panel “the project closest to a real product in this edition.”</p>
+                <p class="stack"><b>Stack:</b> Next.js · React · TypeScript · FastAPI · Python · PostgreSQL · Redis · Docker · Google Cloud</p>
+                <a class="link" href="https://oee-live-keepcoding.cloud.run"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>oee-live-keepcoding.cloud.run</a>
+              </div><div class="project">
+                <div class="project-top"><span class="project-name">PrecioRadar</span><span class="project-tagline">Price comparison across 21 Mexican retailers in one search</span></div>
+                <div class="project-meta">Personal product · live on Google Cloud · 2026</div>
+                <p>Queries 21 stores in parallel, matches the same product across differently named listings, recommends the best option and keeps a daily price history. Hexagonal TypeScript API (Fastify, Zod) with 111 tests, a React web app and an Expo mobile app; Playwright reads client-rendered stores. Runs on Cloud Run, Cloud SQL and Cloud Scheduler.</p>
+                
+                <p class="stack"><b>Stack:</b> TypeScript · Node.js · Fastify · React · Expo / React Native · PostgreSQL · Playwright · Docker · Google Cloud</p>
+                <a class="link" href="https://precioradar-701205043940.us-central1.run.app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>precioradar-701205043940.us-central1.run.app</a>
+              </div>
+        </section>
+        <section>
+          <h2>Previous experience</h2>
+          <div class="job-head">
+            <h3 class="job-title">Claims, Loss &amp; Recovery Coordinator</h3>
+            <span class="job-period">Oct 2023 – Nov 2024</span>
+          </div>
+          <div class="job-meta"><b>Ramírez Valle &amp; Asociados</b> for General Motors San Luis Potosí · San Luis Potosí</div>
+          <div class="group"><ul><li>Recovered <b>MX$15.2M</b> in logistics claims within one year by structuring case analysis and evidence management.</li><li>Managed <b>100+ investigations</b> across claims, supplier follow-up and executive reporting.</li><li>Built Power BI dashboards that <b>cut analysis time by 40%</b> and gave management visibility of recovery status.</li></ul></div>
+        </section>
+      </main>
+      <aside class="aside">
+        <section>
+          <h2>Education</h2>
+          <div class="edu"><strong>Full Stack Web Development Bootcamp</strong><span>KeepCoding · 2025 – 2026</span><em>Completed · final project 9.5/10</em></div><div class="edu"><strong>Business Analytics</strong><span>Tecnológico de Monterrey · 2025</span></div><div class="edu"><strong>Big Data, AI &amp; Machine Learning Bootcamp</strong><span>KeepCoding · 2023 – 2024</span></div><div class="edu"><strong>B.A. in Economics</strong><span>Universidad Autónoma de San Luis Potosí (UASLP) · 2018 – 2023</span><em>Degree awarded</em></div><div class="edu"><strong>B.Eng. in Industrial &amp; Logistics Engineering</strong><span>Universidad Interamericana para el Desarrollo (UNID) · 2020 – 2023</span><em>Degree awarded</em></div>
+        </section>
+        <section>
+          <h2>Languages</h2>
+          <div class="lang"><span><b>Spanish</b></span><span>Native</span></div><div class="lang"><span><b>English</b></span><span>Professional working proficiency</span></div>
+        </section>
+        <section>
+          <h2>Recognition</h2>
+          <p style="margin:0;font-size:8.3pt">Department Employee of the Year — Chunil México</p>
+        </section>
+        <div class="qr">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" shape-rendering="crispEdges"><path stroke="#0b1324" d="M0 0.5h7m4 0h1m3 0h6m1 0h7M0 1.5h1m5 0h1m2 0h1m2 0h1m5 0h1m3 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m1 0h2m4 0h2m2 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m1 0h3m1 0h4m3 0h2m1 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m1 0h2m3 0h4m3 0h1m1 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M8 7.5h2m3 0h1m1 0h1M0 8.5h1m1 0h5m2 0h1m2 0h1m1 0h2m1 0h1m1 0h1m2 0h5M2 9.5h3m2 0h2m3 0h1m2 0h2m1 0h3m1 0h3m3 0h1M1 10.5h1m4 0h3m1 0h2m5 0h2m1 0h2m1 0h2M2 11.5h1m1 0h2m1 0h3m1 0h2m1 0h1m1 0h1m1 0h8m1 0h1M0 12.5h4m2 0h1m4 0h2m3 0h3m6 0h2M3 13.5h2m4 0h1m1 0h1m1 0h3m1 0h4m1 0h3m3 0h1M1 14.5h2m1 0h6m3 0h5m7 0h2M0 15.5h2m1 0h1m1 0h1m1 0h2m1 0h4m1 0h1m2 0h4m2 0h1m2 0h1M0 16.5h1m4 0h3m6 0h2m1 0h1m1 0h1m5 0h2M0 17.5h1m3 0h2m2 0h1m6 0h5m1 0h4m1 0h1m1 0h1M0 18.5h1m1 0h2m2 0h2m1 0h4m5 0h1m1 0h1m1 0h2m2 0h1M0 19.5h1m1 0h3m3 0h1m2 0h2m1 0h1m1 0h1m2 0h2m1 0h2m3 0h1M0 20.5h1m2 0h4m1 0h1m1 0h1m1 0h1m3 0h2m2 0h5m1 0h3M8 21.5h2m1 0h5m1 0h2m1 0h1m3 0h5M0 22.5h7m2 0h2m2 0h5m1 0h2m1 0h1m1 0h3M0 23.5h1m5 0h1m1 0h6m1 0h1m3 0h2m3 0h1M0 24.5h1m1 0h3m1 0h1m1 0h2m4 0h2m1 0h2m1 0h5m1 0h1m1 0h1M0 25.5h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h5m5 0h2M0 26.5h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m3 0h7M0 27.5h1m5 0h1m2 0h1m1 0h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h1M0 28.5h7m1 0h2m1 0h1m1 0h2m3 0h2m2 0h1m1 0h3"/></svg>
+
+          <div>
+            <strong>Live projects and portfolio</strong>
+            <span>Scan to open the portfolio with the live demos</span>
+          </div>
+          <a href="https://robertogag.github.io/">robertogag.github.io</a>
+        </div>
+      </aside>
+    </div>
+    <section class="platform">
+      <h2>MES / ERP platform at a glance</h2>
+      <dl><div><dt>Frontend</dt><dd>React 19 + Vite, MUI and Tailwind, TanStack Query, Chart.js / Recharts / D3</dd></div><div><dt>Backend</dt><dd>Node.js / Express REST APIs, Socket.IO real time, JWT with 20 roles, scheduled mailers, PDF and Excel generation</dd></div><div><dt>Data</dt><dd>PostgreSQL (2 databases, 300+ tables), read-only SQL Server mirror of CONTPAQi, BioTime attendance</dd></div><div><dt>Edge / IIoT</dt><dd>Python collectors for ENGEL (EUROMAP 63), WOOJIN (Modbus TCP), SUMITOMO and Siemens LOGO! / LS Electric PLCs, under a supervisor service</dd></div><div><dt>Shop floor</dt><dd>4 Expo / React Native scanner apps, touch kiosks (Electron + React), Zebra ZPL printers; shift reports by email, WhatsApp line-stop alerts, push notifications</dd></div><div><dt>Quality</dt><dd>580+ automated test files across MES and ERP; a supervisor service restarts 20 data services and alerts by email</dd></div></dl>
+    </section>
+    <div class="footer"><span>Juan Roberto García Gómez · roberto.gag117@gmail.com · +52 444 329 5151</span><span>Page 2 of 2</span></div>
+  </div></body></html>

@@ -10,11 +10,50 @@ export const contactLinks = {
   linkedin: 'https://www.linkedin.com/in/juan-roberto-garc%C3%ADa-g%C3%B3mez1/',
 };
 
+const OEE_DEMO = 'https://oee-live-keepcoding.cloud.run';
+const OEE_CODE =
+  'https://github.com/Robertogag/KeepCoding-Bootcamp-Desarrollo-Web-Edicion-XX/tree/main/09_proyecto-final';
+const PRECIORADAR_APP = 'https://precioradar-701205043940.us-central1.run.app';
+const PRECIORADAR_CODE = 'https://github.com/Robertogag/precioradar';
+
 const C = '/assets/images/captures';
+const OEE = '/assets/images/projects/oee-live';
+const PR = '/assets/images/projects/precioradar';
+const K = '/assets/images/projects/kiosk';
 
 export const portfolioAssets = {
-  cv: '/assets/docs/juan-roberto-garcia-cv-2026.pdf',
+  cv: {
+    en: '/assets/docs/juan-roberto-garcia-cv-2026.pdf',
+    es: '/assets/docs/juan-roberto-garcia-cv-2026-es.pdf',
+  },
   profile: '/assets/images/roberto-profile-cv2.png',
+
+  // OEE Live (KeepCoding final project)
+  oeePlantBoard: `${OEE}/plant-board.webp`,
+  oeeMachineDetail: `${OEE}/machine-detail.webp`,
+  oeeDowntime: `${OEE}/downtime.webp`,
+  oeeData: `${OEE}/data-excel.webp`,
+  oeeTelemetry: `${OEE}/telemetry.webp`,
+  oeePublicBoard: `${OEE}/public-board.webp`,
+  oeeMobile: `${OEE}/mobile.webp`,
+
+  // PrecioRadar
+  prVideo: '/assets/video/precioradar-demo.mp4',
+  prPoster: `${PR}/video-poster.webp`,
+  prHome: `${PR}/home.webp`,
+  prResults: `${PR}/results.webp`,
+  prHistory: `${PR}/history.webp`,
+  prCardDark: `${PR}/card-dark.webp`,
+  prMobile: `${PR}/mobile-dark.webp`,
+
+  // Traceability kiosks (demo data)
+  kioskOperation: `${K}/01-operation.webp`,
+  kioskNgWhere: `${K}/02-ng-where.webp`,
+  kioskNgDefect: `${K}/03-ng-defect.webp`,
+  kioskMaterial: `${K}/04-material-by-stage.webp`,
+  kioskHandover: `${K}/05-shift-handover.webp`,
+  kioskAdminStages: `${K}/06-admin-stages.webp`,
+  kioskAdminSystem: `${K}/07-admin-system.webp`,
 
   // MES captures (fresh, logged in — Aug 2026)
   mesHome: `${C}/mes-home.jpg`,
@@ -76,36 +115,204 @@ export const portfolioAssets = {
 
 export const contentByLanguage = {
   en: {
-    brandRole: 'Data Engineer · MES · Industrial IoT',
+    brandRole: 'MES / ERP Systems Engineer · Full Stack · Industrial IoT',
     imageZoomLabel: 'Open image',
     imageCloseLabel: 'Close image preview',
+    previousLabel: 'Previous',
+    nextLabel: 'Next',
+    soundOnLabel: 'Turn sound on',
+    soundOffLabel: 'Mute',
     navigation: [
-      { label: 'Impact', href: '#impact' },
-      { label: 'MES', href: '#mes' },
-      { label: 'ERP', href: '#erp' },
-      { label: 'Scanner', href: '#scanner' },
-      { label: 'Analytics', href: '#analytics' },
+      { label: 'Projects', href: '#projects' },
+      { label: 'Systems', href: '#systems' },
       { label: 'Experience', href: '#experience' },
+      { label: 'Skills', href: '#skills' },
       { label: 'Contact', href: '#contact' },
     ],
     languageSwitchLabel: 'Select language',
     cvLabel: 'Download CV',
     githubLabel: 'GitHub',
     hero: {
-      eyebrow: 'Data Engineer · Manufacturing Systems',
-      titleLead: 'I build manufacturing systems that turn',
-      titleAccent: 'live data into daily control.',
+      status: 'Open to new opportunities',
+      location: 'San Luis Potosí, México',
+      titleLead: 'I build',
+      rotating: [
+        'real-time MES platforms',
+        'full-stack products',
+        'industrial IoT pipelines',
+        'live plant dashboards',
+      ],
+      titleTail: 'that run on live data.',
       description:
-        "I'm Juan Roberto García Gómez. I design and ship the software a plant actually runs on — a real-time MES, an ERP, industrial IoT integration and the analytics leadership reviews every morning.",
-      primaryAction: 'See the systems',
+        "I'm Juan Roberto García Gómez, IT Supervisor at Chunil México. I built the plant's MES / ERP platform in-house — 62% under its approved budget — and I run its IT projects end to end, from requirements and vendors to the pilot on the floor. I've also just shipped two live products of my own.",
+      primaryAction: 'See live projects',
       secondaryAction: 'Download CV',
       linkedin: 'LinkedIn',
       portraitAlt: 'Professional portrait of Juan Roberto García Gómez',
-      focusTitle: 'What I deliver end to end',
-      focusItems: [
-        'Real-time MES dashboards for the shopfloor and leadership',
-        'Production, downtime, quality, tooling and planning modules in daily use',
-        'Machine integration, ETL pipelines and Power BI on top of MES + ERP',
+      proof: [
+        { value: '2', label: 'live products you can open today' },
+        { value: '9.5/10', label: 'bootcamp final project grade' },
+        { value: '34', label: 'machines streaming into my MES' },
+      ],
+      floating: [
+        { title: 'OEE Live', text: 'Live demo · 8 machines', href: '#oee-live' },
+        { title: 'PrecioRadar', text: '21 stores, one search', href: '#precioradar' },
+      ],
+    },
+    projects: {
+      eyebrow: 'Live projects',
+      title: 'Open them right now — they are running',
+      description:
+        'Two products I designed, built and deployed end to end. No mockups: live data, tested code and real infrastructure on Google Cloud.',
+      builtLabel: 'What I built',
+      stackLabel: 'Stack',
+      viewerLabel: 'Project screens',
+      items: [
+        {
+          id: 'oee-live',
+          kicker: 'Full Stack bootcamp final project · KeepCoding · 2026',
+          title: 'OEE Live',
+          tagline: 'Real-time OEE monitoring for injection plants that have no MES.',
+          description:
+            'It reads every machine over Modbus TCP once per second, computes OEE per machine, shift and plant, and turns it into a live plant board, classified downtime, alerts and an Excel report ready for a meeting. The demo simulates eight injection machines writing to the database while you watch.',
+          quote: 'The project closest to a real product in this edition.',
+          quoteSource: 'KeepCoding final-project panel',
+          metrics: [
+            { value: '9.5/10', label: 'final grade' },
+            { value: '298', label: 'automated tests' },
+            { value: '31', label: 'PostgreSQL tables' },
+            { value: '1 s', label: 'Modbus polling' },
+          ],
+          points: [
+            'Next.js 16 + strict TypeScript frontend: server rendering, Spanish and English, and WebSocket snapshots written straight into the query cache.',
+            'FastAPI backend with rotating refresh tokens, per-plant roles, rate limiting and an OEE engine that never invents a zero.',
+            'Python collector reading eight machines in parallel with pymodbus; PostgreSQL for history, Redis for live state.',
+            'Deployed on Google Cloud: Docker Compose behind Caddy, Cloud Run as the HTTPS entry, immutable releases with backups.',
+          ],
+          tech: 'Next.js · React 19 · TypeScript · TanStack Query · Tailwind · FastAPI · Python · PostgreSQL · Redis · Docker · Google Cloud',
+          primary: { label: 'Open live demo', href: OEE_DEMO },
+          secondary: [
+            { label: 'Public board, no login', href: `${OEE_DEMO}/en/plants/planta-demo-slp`, icon: 'external' },
+            { label: 'Code on GitHub', href: OEE_CODE, icon: 'github' },
+          ],
+          note: 'The read-only demo login is shown on the landing page.',
+          tone: 'dark',
+          slides: [
+            { label: 'Plant board', src: portfolioAssets.oeePlantBoard, alt: 'OEE Live plant board with eight injection machines, live state and OEE per machine' },
+            { label: 'Machine detail', src: portfolioAssets.oeeMachineDetail, alt: 'Machine detail with an 8-hour state timeline, OEE of the day and the current production run' },
+            { label: 'Downtime', src: portfolioAssets.oeeDowntime, alt: 'Downtime list with reason, comment and who classified each stop' },
+            { label: 'Data & Excel', src: portfolioAssets.oeeData, alt: 'Data query by date range and machine with OEE breakdown and Excel export' },
+            { label: 'Telemetry', src: portfolioAssets.oeeTelemetry, alt: 'Historical process telemetry chart for one machine' },
+            { label: 'Public board', src: portfolioAssets.oeePublicBoard, alt: 'Public plant board anyone can open without an account' },
+            { label: 'Mobile', src: portfolioAssets.oeeMobile, alt: 'Public plant board on a phone', fit: 'contain' },
+          ],
+        },
+        {
+          id: 'precioradar',
+          kicker: 'Personal product · live on Google Cloud · 2026',
+          title: 'PrecioRadar',
+          tagline: 'One search, 21 Mexican stores, and the price history to tell a real deal from a fake one.',
+          description:
+            'It queries every store in parallel, groups the same product even when each store names it differently, tells you where it is cheapest — or which bundle is worth a little more — and keeps a daily price history with up and down arrows.',
+          metrics: [
+            { value: '21', label: 'stores per search' },
+            { value: '111', label: 'API tests' },
+            { value: '2', label: 'apps: web and mobile' },
+            { value: '0 → 4', label: 'Cloud Run instances' },
+          ],
+          points: [
+            'Hexagonal Fastify API in strict TypeScript: the domain (relevance, grouping, bundles, recommendation) knows nothing about stores or HTTP.',
+            'A product-matching engine that knows "16 Plus" is not "16" and that a microSD "for Switch 2" is not the console.',
+            'A real Chromium lane (Playwright) for stores that render in the browser. Public pages and APIs only: a store that blocks is reported, never bypassed.',
+            'All on GCP: Cloud Run, Cloud SQL, Scheduler for the daily refresh, Secret Manager and uptime alerts — deployed by one idempotent script.',
+          ],
+          tech: 'TypeScript · Node 22 · Fastify · Zod · Vitest · React 19 · Vite · Expo / React Native · PostgreSQL · Playwright · Docker · Google Cloud',
+          primary: { label: 'Open the app', href: PRECIORADAR_APP },
+          secondary: [{ label: 'Code on GitHub', href: PRECIORADAR_CODE, icon: 'github' }],
+          tone: 'light',
+          slides: [
+            { type: 'video', label: 'Demo · 33 s', src: portfolioAssets.prVideo, poster: portfolioAssets.prPoster, alt: 'PrecioRadar demo video' },
+            { label: 'Results', src: portfolioAssets.prResults, alt: 'Search results for Nintendo Switch 2 across stores, cheapest first' },
+            { label: 'Price history', src: portfolioAssets.prHistory, alt: 'Price history chart per store with up and down arrows', fit: 'contain' },
+            { label: 'Home', src: portfolioAssets.prHome, alt: 'PrecioRadar home page with the product search' },
+            { label: 'Mobile app', src: portfolioAssets.prMobile, alt: 'PrecioRadar mobile app in dark mode', fit: 'contain' },
+            { label: 'Dark mode', src: portfolioAssets.prCardDark, alt: 'Product card in dark mode with the Mercado Libre link', fit: 'contain' },
+          ],
+        },
+      ],
+    },
+    systems: {
+      eyebrow: 'In production at Chunil México',
+      title: 'The systems a plant runs on, every shift',
+      description:
+        'Built and maintained inside a real plastic-injection and assembly plant in San Luis Potosí. Pick a system to explore its screens.',
+      tabs: {
+        mes: 'MES',
+        kiosk: 'Traceability kiosks',
+        erp: 'ERP',
+        scanner: 'Scanner app',
+        analytics: 'Analytics',
+      },
+      screensLabel: 'screens',
+      hint: 'Swipe or use the arrows',
+    },
+    kiosk: {
+      eyebrow: 'Shop floor · Traceability kiosks',
+      title: 'Touch kiosks that give every box its genealogy',
+      description:
+        'Electron + React + TypeScript kiosks on the production lines, designed for gloves, glare and a 2 m reading distance. The machine counts the pieces; the kiosk prints each box label, books NG by stage and links every material lot — through the same inventory engine the scanner apps use.',
+      footnote:
+        'Shown with demo data. One universal kiosk configured by stages from the bill of materials — no per-product code — backed by 4,500+ automated tests.',
+      gallery: [
+        {
+          title: 'Operation',
+          subtitle: 'The machine counts, one key prints',
+          image: portfolioAssets.kioskOperation,
+          alt: 'Kiosk operation screen with the open box, machine count and NG per stage',
+          description: 'The open box, what the machine counted and the NG from every stage. When the box is full, one key prints the label; any correction needs a supervisor PIN and is logged.',
+        },
+        {
+          title: 'NG by stage',
+          subtitle: 'Where did the defect happen?',
+          image: portfolioAssets.kioskNgWhere,
+          alt: 'Kiosk screen asking at which stage the defect happened',
+          description: 'Each defect is booked against the part and process of its stage, so injection OEE is never penalised by assembly defects.',
+        },
+        {
+          title: 'Defect catalog',
+          subtitle: 'Big keys, numeric keypad',
+          image: portfolioAssets.kioskNgDefect,
+          alt: 'Kiosk defect catalog with large keys and numeric keypad',
+          description: 'A defect catalog per stage with large keys and a numeric keypad, built for gloved hands.',
+        },
+        {
+          title: 'Material by stage',
+          subtitle: 'Lot genealogy on every box',
+          image: portfolioAssets.kioskMaterial,
+          alt: 'Kiosk material screen with the lots scanned into each stage',
+          description: 'Operators scan the resin, insert and sub-component lots entering each stage; every box carries that genealogy.',
+        },
+        {
+          title: 'Shift handover',
+          subtitle: 'No logout at shift change',
+          image: portfolioAssets.kioskHandover,
+          alt: 'Kiosk shift handover screen',
+          description: 'Same team or a new one? The kiosk keeps the part, materials and open box, and carries the count into the next shift automatically.',
+        },
+        {
+          title: 'Station setup',
+          subtitle: 'Configured from the bill of materials',
+          image: portfolioAssets.kioskAdminStages,
+          alt: 'Kiosk station setup proposing stages from the bill of materials',
+          description: 'Answer which stages this kiosk runs and the stations are proposed from the bill of materials.',
+        },
+        {
+          title: 'Administration',
+          subtitle: 'Grouped by intent',
+          image: portfolioAssets.kioskAdminSystem,
+          alt: 'Kiosk administration screen grouped by intent',
+          description: 'Settings grouped by intent, with destructive actions isolated in a separate danger zone.',
+        },
       ],
     },
     impact: {
@@ -115,9 +322,14 @@ export const contentByLanguage = {
         'Every number below comes from systems running in production at a plastic-injection plant in San Luis Potosí.',
       stats: [
         {
-          value: '34',
-          label: 'machines connected',
-          detail: 'EUROMAP63 and Modbus integration across ENGEL, WOOJIN and SUMITOMO injection machines — plus 14 semiautomatic stations and every manual assembly station live.',
+          value: '100%',
+          label: 'of the plant connected',
+          detail: '34 injection machines (ENGEL, WOOJIN, SUMITOMO) over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 handheld scanners.',
+        },
+        {
+          value: '62%',
+          label: 'under the approved budget',
+          detail: 'Delivered against an approved US$118K budget by building in-house; vendors only handled legacy-PLC integration and cabling.',
         },
         {
           value: '90%',
@@ -125,14 +337,9 @@ export const contentByLanguage = {
           detail: 'Production now arrives in real time; operators only add downtime and defect context.',
         },
         {
-          value: '24/7',
-          label: 'plan visibility',
-          detail: 'Leadership sees plan vs. actual, stop causes and production running without a plan, live.',
-        },
-        {
           value: '6',
-          label: 'plant areas unified',
-          detail: 'Injection, assembly, EPC, tooling, quality and maintenance in one connected MES + ERP platform.',
+          label: 'plant areas, one data model',
+          detail: 'Injection, assembly, EPC, tooling, quality and maintenance in one connected MES / ERP platform.',
         },
       ],
     },
@@ -461,21 +668,38 @@ export const contentByLanguage = {
       items: [
         {
           title: 'MES & Industrial IoT',
-          text: 'I connect machines, plant logic and user workflows into systems operations can use every shift.',
+          text: 'I connect machines, PLCs and plant logic into systems operations can use every shift.',
         },
         {
-          title: 'Operational dashboards',
-          text: 'I build real-time screens that are readable, useful and aligned with daily plant decisions.',
+          title: 'Full-stack products',
+          text: 'I design, test and deploy web and mobile apps end to end — React, Node.js, Python, PostgreSQL and the cloud.',
         },
         {
-          title: 'Data engineering & ETL',
-          text: 'I design databases, pipelines and business rules that make manufacturing data reliable.',
+          title: 'Data & analytics',
+          text: 'I model databases, build pipelines and turn them into reports and Power BI dashboards leadership acts on.',
         },
         {
-          title: 'Power BI & automation',
-          text: 'I turn raw data into recurring reports and management dashboards that are ready to review.',
+          title: 'IT project leadership',
+          text: 'Requirements with every area, vendor comparisons, budgets and status reports — from business case to the pilot on the floor.',
         },
       ],
+    },
+    skills: {
+      eyebrow: 'Skills',
+      title: 'What I bring to a team',
+      description:
+        'I create the most value where operations, industrial data and software delivery have to move together.',
+      stackTitle: 'Tools I ship with',
+      groups: [
+        { title: 'Frontend', items: ['React 19', 'Next.js', 'TypeScript', 'Vite', 'TanStack Query', 'Tailwind CSS', 'React Native · Expo', 'Electron'] },
+        { title: 'Backend', items: ['Node.js', 'Express', 'Fastify', 'Python', 'FastAPI', 'Socket.IO · WebSocket', 'REST · OpenAPI', 'JWT auth'] },
+        { title: 'Data', items: ['PostgreSQL', 'Redis', 'Data modeling', 'ETL pipelines', 'Power BI', 'D3.js', 'Excel automation'] },
+        { title: 'Industrial', items: ['OEE', 'Modbus TCP', 'EUROMAP63', 'PLC data collection', 'Zebra ZPL labels', 'Lot traceability'] },
+        { title: 'Quality & delivery', items: ['TDD', 'Hexagonal architecture', 'Vitest · pytest', 'Playwright', 'Docker', 'Google Cloud', 'GitHub Actions'] },
+        { title: 'IT & management', items: ['Git · GitHub', 'Jira', 'Microsoft 365', 'Cisco Meraki', 'Budgets & vendors', 'Leading developers'] },
+      ],
+      languagesTitle: 'Languages',
+      languages: ['Spanish — native', 'English — professional working proficiency'],
     },
     experience: {
       eyebrow: 'Experience',
@@ -483,27 +707,30 @@ export const contentByLanguage = {
       description: 'Manufacturing execution, data engineering and analytics tied to business outcomes.',
       items: [
         {
-          company: 'Chunil Mexico',
-          role: 'Data Engineer · MES & Manufacturing Analytics',
-          period: 'Oct 2024 — Present',
+          company: 'Chunil México',
+          role: 'IT Supervisor · MES / ERP platform owner',
+          period: 'Nov 2024 — Present',
+          location: 'San Luis Potosí',
           summary:
-            'Designed and shipped a production MES and ERP for a plastic-injection plant: industrial integration, backend services, analytics and React apps for shopfloor teams.',
+            'Korean automotive supplier, plastic injection and assembly. I built the plant’s MES / ERP platform in-house and manage its IT projects end to end — requirements, vendors, budget, rollout and reporting to leadership.',
           bullets: [
-            'Centralized injection, assembly, EPC, tooling and plant operations in one web platform.',
-            'Integrated 34 machines into real-time dashboards, historical analysis and downtime logic.',
-            'Recognized as Department Employee of the Year.',
+            'Delivered the MES ~62% under its approved US$118K budget by building in-house; gathered requirements with Production, Quality, HR and Finance and closed the project formally in July 2026 with a report to plant leadership and the CEO in Korea.',
+            'Connected 100% of the plant — 34 injection machines over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 scanners — into one data model for 6 areas, cutting manual production reporting by ~90%.',
+            'Led the end-to-end traceability project (resin to finished good): business case and BOM for 66 points, a vendor comparison against US$206K–280K quotes, and a two-stage budget approved by HQ in September 2026; pilot running on the floor.',
+            'Hired and lead two developers; run plant IT — Microsoft 365, Cisco Meraki firewall, managed switches, servers and NAS backups.',
           ],
         },
         {
-          company: 'Ramirez Valle & Asociados · General Motors SLP',
+          company: 'Ramírez Valle & Asociados · General Motors SLP',
           role: 'Claims, Loss & Recovery Coordinator',
-          period: 'Oct 2023 — 2024',
+          period: 'Oct 2023 — Nov 2024',
+          location: 'San Luis Potosí',
           summary:
             'Operational analytics focused on financial recovery, evidence management and executive visibility.',
           bullets: [
-            'Led data-driven logistics claims analysis and financial recovery.',
+            'Recovered MX$15.2M in logistics claims within one year through structured case analysis.',
             'Built Power BI dashboards that cut analysis time by 40%.',
-            'Structured evidence and tracking workflows for 100+ cases.',
+            'Managed 100+ investigations with structured evidence and tracking workflows.',
           ],
         },
       ],
@@ -524,7 +751,7 @@ export const contentByLanguage = {
         {
           title: 'KeepCoding',
           kicker: 'Advanced training',
-          text: 'Big Data, AI, Machine Learning and full-stack training applied to real delivery.',
+          text: 'Full Stack Web Development bootcamp (2025–2026) with the final project graded 9.5/10, after the Big Data, AI & Machine Learning bootcamp (2023–2024).',
           image: portfolioAssets.keepCoding,
           alt: 'KeepCoding certification',
           publicationUrl: contactLinks.linkedin,
@@ -540,9 +767,9 @@ export const contentByLanguage = {
       ],
     },
     extraProjects: {
-      eyebrow: 'Bootcamp Projects',
-      title: 'Extra work from KeepCoding',
-      description: 'Selected projects from my KeepCoding Web Development Bootcamp repository — from JavaScript foundations to a fully tested REST API.',
+      eyebrow: 'More from the bootcamp',
+      title: 'Earlier KeepCoding projects',
+      description: 'From JavaScript foundations to a fully tested REST API — the path that led to OEE Live.',
       linkLabel: 'Open on GitHub',
       items: [
         {
@@ -589,70 +816,232 @@ export const contentByLanguage = {
     },
     education: {
       eyebrow: 'Education',
-      title: 'Training and core stack',
-      description: 'Academic and technical background applied to manufacturing and analytics.',
-      educationTitle: 'Education',
-      stackTitle: 'Core stack',
-      languagesTitle: 'Languages',
+      title: 'Economics, engineering and two bootcamps',
+      description: 'An academic base in economics and industrial engineering, kept current with hands-on technical training.',
       items: [
-        'Full Stack Web Development Bootcamp, KeepCoding · Nov 2025 — Present',
-        'Business Analytics, Tecnológico de Monterrey · Jan 2025 — Apr 2025',
-        'Big Data, AI & Machine Learning Bootcamp, KeepCoding · Jun 2023 — Jun 2024',
-        'Python for Data Science, IICO · May 2022 — Aug 2022',
-        'BA in Economics, UASLP · Aug 2018 — Jul 2023',
-        'Industrial & Logistics Engineering, UNID · Aug 2014 — Jul 2017',
+        { title: 'Full Stack Web Development Bootcamp', school: 'KeepCoding', period: 'Nov 2025 — Oct 2026', note: 'Final project OEE Live · 9.5/10' },
+        { title: 'Business Analytics', school: 'Tecnológico de Monterrey', period: 'Jan 2025 — Apr 2025' },
+        { title: 'Big Data, AI & Machine Learning Bootcamp', school: 'KeepCoding', period: 'Jun 2023 — Jun 2024' },
+        { title: 'Python for Data Science', school: 'IICO', period: 'May 2022 — Aug 2022' },
+        { title: 'BA in Economics', school: 'UASLP', period: 'Aug 2018 — Jul 2023' },
+        { title: 'Industrial & Logistics Engineering', school: 'UNID', period: '2020 — 2023' },
       ],
-      stack: [
-        'PostgreSQL', 'SQL', 'Node.js', 'React', 'Vite', 'REST APIs',
-        'Socket.IO', 'ETL', 'Power BI', 'OEE', 'Modbus', 'EUROMAP63',
-      ],
-      languages: ['Spanish — Native', 'English — Professional working proficiency'],
     },
     closing: {
-      eyebrow: 'Available for collaboration',
-      title: 'If your operation needs to run on better systems, that is exactly where I fit.',
+      eyebrow: "Let's talk",
+      title: 'Looking for someone who ships software a plant actually uses?',
       description:
-        'Independent or in-house — I can lead MES, Industrial IoT, dashboards, Power BI, reporting automation and connected manufacturing applications.',
+        'Open to full-stack, data engineering and MES / Industrial IoT roles. Email is the fastest way to reach me — and my CV is one click away.',
       primary: 'Email me',
-      quaternary: 'LinkedIn',
+      cv: 'Download CV',
+      linkedin: 'LinkedIn',
+      github: 'GitHub',
     },
     footer: {
-      role: 'Data Engineer · Industrial IoT · Manufacturing Systems',
-      builtWith: 'Built with React + Vite + Framer Motion',
+      role: 'Data Engineer · Full Stack · Industrial IoT',
+      builtWith: 'Built with React, Vite and Framer Motion',
     },
   },
 
   es: {
-    brandRole: 'Data Engineer · MES · Industrial IoT',
+    brandRole: 'MES / ERP Systems Engineer · Full Stack · IoT industrial',
     imageZoomLabel: 'Abrir imagen',
     imageCloseLabel: 'Cerrar vista de imagen',
+    previousLabel: 'Anterior',
+    nextLabel: 'Siguiente',
+    soundOnLabel: 'Activar sonido',
+    soundOffLabel: 'Silenciar',
     navigation: [
-      { label: 'Impacto', href: '#impact' },
-      { label: 'MES', href: '#mes' },
-      { label: 'ERP', href: '#erp' },
-      { label: 'Scanner', href: '#scanner' },
-      { label: 'Analítica', href: '#analytics' },
+      { label: 'Proyectos', href: '#projects' },
+      { label: 'Sistemas', href: '#systems' },
       { label: 'Experiencia', href: '#experience' },
+      { label: 'Habilidades', href: '#skills' },
       { label: 'Contacto', href: '#contact' },
     ],
     languageSwitchLabel: 'Seleccionar idioma',
     cvLabel: 'Descargar CV',
     githubLabel: 'GitHub',
     hero: {
-      eyebrow: 'Data Engineer · Sistemas de manufactura',
-      titleLead: 'Construyo sistemas de manufactura que vuelven los',
-      titleAccent: 'datos en vivo en control diario.',
+      status: 'Abierto a nuevas oportunidades',
+      location: 'San Luis Potosí, México',
+      titleLead: 'Construyo',
+      rotating: [
+        'plataformas MES',
+        'productos full stack',
+        'IoT industrial',
+        'tableros en tiempo real',
+      ],
+      titleTail: 'que corren con datos en vivo.',
       description:
-        'Soy Juan Roberto García Gómez. Diseño y entrego el software con el que opera una planta: un MES en tiempo real, un ERP, integración de IoT industrial y la analítica que la dirección revisa cada mañana.',
-      primaryAction: 'Ver los sistemas',
+        'Soy Juan Roberto García Gómez, IT Supervisor en Chunil México. Construí in-house la plataforma MES / ERP de la planta —62% por debajo de su presupuesto aprobado— y administro sus proyectos de IT de punta a punta, desde los requisitos y los proveedores hasta el piloto en piso. Además acabo de lanzar dos productos propios que ya están en línea.',
+      primaryAction: 'Ver proyectos en vivo',
       secondaryAction: 'Descargar CV',
       linkedin: 'LinkedIn',
       portraitAlt: 'Foto profesional de Juan Roberto García Gómez',
-      focusTitle: 'Lo que entrego de inicio a fin',
-      focusItems: [
-        'Dashboards MES en tiempo real para shopfloor y dirección',
-        'Módulos de producción, paros, calidad, tooling y planeación en uso diario',
-        'Integración de máquinas, pipelines ETL y Power BI sobre MES + ERP',
+      proof: [
+        { value: '2', label: 'productos en línea que puedes abrir hoy' },
+        { value: '9.5/10', label: 'calificación del proyecto final del bootcamp' },
+        { value: '34', label: 'máquinas transmitiendo a mi MES' },
+      ],
+      floating: [
+        { title: 'OEE Live', text: 'Demo en vivo · 8 máquinas', href: '#oee-live' },
+        { title: 'PrecioRadar', text: '21 tiendas, una búsqueda', href: '#precioradar' },
+      ],
+    },
+    projects: {
+      eyebrow: 'Proyectos en vivo',
+      title: 'Ábrelos ahora mismo: están corriendo',
+      description:
+        'Dos productos que diseñé, construí y desplegué de punta a punta. Sin maquetas: datos en vivo, código con pruebas e infraestructura real en Google Cloud.',
+      builtLabel: 'Lo que construí',
+      stackLabel: 'Stack',
+      viewerLabel: 'Pantallas del proyecto',
+      items: [
+        {
+          id: 'oee-live',
+          kicker: 'Proyecto final del bootcamp Full Stack · KeepCoding · 2026',
+          title: 'OEE Live',
+          tagline: 'Monitoreo de OEE en tiempo real para plantas de inyección que no tienen MES.',
+          description:
+            'Lee cada máquina por Modbus TCP una vez por segundo, calcula el OEE por máquina, turno y planta, y lo convierte en un tablero de planta en vivo, paros clasificados, alertas y un Excel listo para una junta. La demo simula ocho inyectoras que escriben en la base de datos mientras la ves.',
+          quote: 'El proyecto más cercano a un producto real de esta edición.',
+          quoteSource: 'Tribunal del proyecto final, KeepCoding',
+          metrics: [
+            { value: '9.5/10', label: 'calificación final' },
+            { value: '298', label: 'pruebas automatizadas' },
+            { value: '31', label: 'tablas en PostgreSQL' },
+            { value: '1 s', label: 'lectura Modbus' },
+          ],
+          points: [
+            'Frontend en Next.js 16 y TypeScript estricto: renderizado en servidor, español e inglés, y snapshots por WebSocket escritos directo en la caché.',
+            'Backend en FastAPI con refresh rotatorio, roles por planta, límite de intentos y un cálculo de OEE que nunca inventa un cero.',
+            'Colector en Python que lee ocho máquinas en paralelo con pymodbus; PostgreSQL para el histórico y Redis para el estado en vivo.',
+            'Desplegado en Google Cloud: Docker Compose detrás de Caddy, Cloud Run como entrada HTTPS y versiones inmutables con respaldo.',
+          ],
+          tech: 'Next.js · React 19 · TypeScript · TanStack Query · Tailwind · FastAPI · Python · PostgreSQL · Redis · Docker · Google Cloud',
+          primary: { label: 'Abrir la demo', href: OEE_DEMO },
+          secondary: [
+            { label: 'Tablero público sin cuenta', href: `${OEE_DEMO}/es/plants/planta-demo-slp`, icon: 'external' },
+            { label: 'Código en GitHub', href: OEE_CODE, icon: 'github' },
+          ],
+          note: 'La cuenta demo de solo lectura aparece en la portada.',
+          tone: 'dark',
+          slides: [
+            { label: 'Tablero de planta', src: portfolioAssets.oeePlantBoard, alt: 'Tablero de planta de OEE Live con ocho inyectoras, su estado en vivo y el OEE de cada una' },
+            { label: 'Detalle de máquina', src: portfolioAssets.oeeMachineDetail, alt: 'Detalle de máquina con línea de tiempo de 8 horas, OEE del día y la corrida vigente' },
+            { label: 'Paros', src: portfolioAssets.oeeDowntime, alt: 'Lista de paros con motivo, comentario y quién clasificó cada uno' },
+            { label: 'Datos y Excel', src: portfolioAssets.oeeData, alt: 'Consulta de datos por rango y máquina con desglose de OEE y descarga a Excel' },
+            { label: 'Telemetría', src: portfolioAssets.oeeTelemetry, alt: 'Gráfica histórica de telemetría de proceso de una máquina' },
+            { label: 'Tablero público', src: portfolioAssets.oeePublicBoard, alt: 'Tablero público de la planta que cualquiera abre sin cuenta' },
+            { label: 'Móvil', src: portfolioAssets.oeeMobile, alt: 'Tablero público de la planta en un teléfono', fit: 'contain' },
+          ],
+        },
+        {
+          id: 'precioradar',
+          kicker: 'Producto propio · en línea en Google Cloud · 2026',
+          title: 'PrecioRadar',
+          tagline: 'Una búsqueda, 21 tiendas de México y el historial para distinguir una oferta real de una falsa.',
+          description:
+            'Consulta todas las tiendas en paralelo, agrupa el mismo producto aunque cada tienda lo nombre distinto, te dice dónde cuesta menos —o qué paquete vale la pena por un poco más— y guarda un historial diario con flechas de bajó y subió.',
+          metrics: [
+            { value: '21', label: 'tiendas por búsqueda' },
+            { value: '111', label: 'pruebas del API' },
+            { value: '2', label: 'apps: web y móvil' },
+            { value: '0 → 4', label: 'instancias en Cloud Run' },
+          ],
+          points: [
+            'API Fastify hexagonal en TypeScript estricto: el dominio (relevancia, agrupación, paquetes, recomendación) no sabe de tiendas ni de HTTP.',
+            'Un motor de agrupación que sabe que "16 Plus" no es "16" y que una microSD "para Switch 2" no es la consola.',
+            'Un carril con Chromium real (Playwright) para las tiendas que se pintan en el navegador. Solo páginas y APIs públicas: la tienda que bloquea se reporta, nunca se brinca.',
+            'Todo en GCP: Cloud Run, Cloud SQL, Scheduler para el refresco diario, Secret Manager y alertas de disponibilidad, desplegado con un solo script idempotente.',
+          ],
+          tech: 'TypeScript · Node 22 · Fastify · Zod · Vitest · React 19 · Vite · Expo / React Native · PostgreSQL · Playwright · Docker · Google Cloud',
+          primary: { label: 'Abrir la app', href: PRECIORADAR_APP },
+          secondary: [{ label: 'Código en GitHub', href: PRECIORADAR_CODE, icon: 'github' }],
+          tone: 'light',
+          slides: [
+            { type: 'video', label: 'Demo · 33 s', src: portfolioAssets.prVideo, poster: portfolioAssets.prPoster, alt: 'Video demo de PrecioRadar' },
+            { label: 'Resultados', src: portfolioAssets.prResults, alt: 'Resultados de Nintendo Switch 2 en varias tiendas, la más barata primero' },
+            { label: 'Historial de precios', src: portfolioAssets.prHistory, alt: 'Gráfica del historial de precios por tienda con flechas de bajó y subió', fit: 'contain' },
+            { label: 'Inicio', src: portfolioAssets.prHome, alt: 'Página de inicio de PrecioRadar con el buscador' },
+            { label: 'App móvil', src: portfolioAssets.prMobile, alt: 'App móvil de PrecioRadar en tema oscuro', fit: 'contain' },
+            { label: 'Tema oscuro', src: portfolioAssets.prCardDark, alt: 'Tarjeta de producto en tema oscuro con el enlace a Mercado Libre', fit: 'contain' },
+          ],
+        },
+      ],
+    },
+    systems: {
+      eyebrow: 'En producción en Chunil México',
+      title: 'Los sistemas con los que opera una planta, cada turno',
+      description:
+        'Construidos y mantenidos dentro de una planta real de inyección y ensamble de plástico en San Luis Potosí. Elige un sistema para ver sus pantallas.',
+      tabs: {
+        mes: 'MES',
+        kiosk: 'Kioscos de trazabilidad',
+        erp: 'ERP',
+        scanner: 'App de escaneo',
+        analytics: 'Analítica',
+      },
+      screensLabel: 'pantallas',
+      hint: 'Desliza o usa las flechas',
+    },
+    kiosk: {
+      eyebrow: 'Piso de producción · Kioscos de trazabilidad',
+      title: 'Kioscos táctiles que le dan genealogía a cada caja',
+      description:
+        'Kioscos en Electron + React + TypeScript en las líneas de producción, pensados para guantes, reflejos y lectura a 2 m. La máquina cuenta las piezas; el kiosco imprime la etiqueta de cada caja, registra el NG por etapa y relaciona cada lote de material, todo a través del mismo motor de inventario que usan las apps de escaneo.',
+      footnote:
+        'Pantallas con datos de demostración. Un solo kiosco universal configurado por etapas a partir de la lista de materiales, sin código por producto, respaldado por más de 4,500 pruebas automatizadas.',
+      gallery: [
+        {
+          title: 'Operación',
+          subtitle: 'La máquina cuenta, una tecla imprime',
+          image: portfolioAssets.kioskOperation,
+          alt: 'Pantalla de operación del kiosco con la caja abierta, el conteo de la máquina y el NG por etapa',
+          description: 'La caja abierta, lo que contó la máquina y el NG de cada etapa. Con la caja llena, una tecla imprime la etiqueta; cualquier corrección pide PIN de supervisor y queda registrada.',
+        },
+        {
+          title: 'NG por etapa',
+          subtitle: '¿Dónde ocurrió el defecto?',
+          image: portfolioAssets.kioskNgWhere,
+          alt: 'Pantalla del kiosco que pregunta en qué etapa ocurrió el defecto',
+          description: 'Cada defecto se carga a la parte y al proceso de su etapa, así el OEE de inyección nunca se castiga por defectos de ensamble.',
+        },
+        {
+          title: 'Catálogo de defectos',
+          subtitle: 'Teclas grandes, teclado numérico',
+          image: portfolioAssets.kioskNgDefect,
+          alt: 'Catálogo de defectos del kiosco con teclas grandes y teclado numérico',
+          description: 'Catálogo de defectos por etapa con teclas grandes y teclado numérico, hecho para usarse con guantes.',
+        },
+        {
+          title: 'Material por etapa',
+          subtitle: 'Genealogía de lotes en cada caja',
+          image: portfolioAssets.kioskMaterial,
+          alt: 'Pantalla de material del kiosco con los lotes escaneados en cada etapa',
+          description: 'El operador escanea los lotes de resina, inserto y subcomponentes que entran a cada etapa; cada caja lleva esa genealogía.',
+        },
+        {
+          title: 'Cambio de turno',
+          subtitle: 'Sin cerrar sesión',
+          image: portfolioAssets.kioskHandover,
+          alt: 'Pantalla de cambio de turno del kiosco',
+          description: '¿Mismo equipo o uno nuevo? El kiosco conserva la parte, los materiales y la caja abierta, y pasa el conteo al siguiente turno automáticamente.',
+        },
+        {
+          title: 'Configuración de estación',
+          subtitle: 'A partir de la lista de materiales',
+          image: portfolioAssets.kioskAdminStages,
+          alt: 'Configuración de estación del kiosco que propone etapas desde la lista de materiales',
+          description: 'Respondes qué etapas corre el kiosco y las estaciones se proponen desde la lista de materiales.',
+        },
+        {
+          title: 'Administración',
+          subtitle: 'Agrupada por intención',
+          image: portfolioAssets.kioskAdminSystem,
+          alt: 'Pantalla de administración del kiosco agrupada por intención',
+          description: 'Ajustes agrupados por intención, con las acciones destructivas aisladas en una zona de peligro aparte.',
+        },
       ],
     },
     impact: {
@@ -662,9 +1051,14 @@ export const contentByLanguage = {
         'Cada número proviene de sistemas en producción en una planta de inyección de plástico en San Luis Potosí.',
       stats: [
         {
-          value: '34',
-          label: 'máquinas conectadas',
-          detail: 'Integración EUROMAP63 y Modbus en máquinas de inyección ENGEL, WOOJIN y SUMITOMO — más 14 estaciones semiautomáticas y todas las estaciones manuales de ensamble en vivo.',
+          value: '100%',
+          label: 'de la planta conectada',
+          detail: '34 inyectoras (ENGEL, WOOJIN, SUMITOMO) por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres de mano.',
+        },
+        {
+          value: '62%',
+          label: 'por debajo del presupuesto aprobado',
+          detail: 'Entregado contra un presupuesto aprobado de US$118K gracias al desarrollo in-house; los proveedores solo hicieron la integración de PLC antiguos y el cableado.',
         },
         {
           value: '90%',
@@ -672,14 +1066,9 @@ export const contentByLanguage = {
           detail: 'La producción llega en tiempo real; el equipo solo agrega contexto de paros y defectos.',
         },
         {
-          value: '24/7',
-          label: 'visibilidad del plan',
-          detail: 'La dirección ve plan vs. real, causas de paro y producción corriendo sin plan, en vivo.',
-        },
-        {
           value: '6',
-          label: 'áreas de planta unificadas',
-          detail: 'Inyección, ensamble, EPC, tooling, calidad y mantenimiento en una sola plataforma MES + ERP.',
+          label: 'áreas de planta, un modelo de datos',
+          detail: 'Inyección, ensamble, EPC, tooling, calidad y mantenimiento en una sola plataforma MES / ERP.',
         },
       ],
     },
@@ -1007,22 +1396,39 @@ export const contentByLanguage = {
         'Genero más valor donde operación, datos industriales y entrega de software deben avanzar juntos.',
       items: [
         {
-          title: 'MES e Industrial IoT',
-          text: 'Conecto máquinas, lógica de planta y flujos de usuario en sistemas que operación usa cada turno.',
+          title: 'MES e IoT industrial',
+          text: 'Conecto máquinas, PLC y lógica de planta en sistemas que operación usa cada turno.',
         },
         {
-          title: 'Dashboards operativos',
-          text: 'Construyo vistas en tiempo real claras, útiles y alineadas con decisiones de planta.',
+          title: 'Productos full stack',
+          text: 'Diseño, pruebo y despliego apps web y móviles de punta a punta: React, Node.js, Python, PostgreSQL y la nube.',
         },
         {
-          title: 'Data engineering y ETL',
-          text: 'Diseño bases de datos, pipelines y reglas de negocio que vuelven confiables los datos de manufactura.',
+          title: 'Datos y analítica',
+          text: 'Modelo bases de datos, construyo pipelines y los convierto en reportes y tableros Power BI con los que decide la dirección.',
         },
         {
-          title: 'Power BI y automatización',
-          text: 'Convierto datos crudos en reportes recurrentes y dashboards gerenciales listos para revisión.',
+          title: 'Gestión de proyectos de IT',
+          text: 'Requisitos con cada área, comparativos de proveedores, presupuestos y reportes de estatus: del caso de negocio al piloto en piso.',
         },
       ],
+    },
+    skills: {
+      eyebrow: 'Habilidades',
+      title: 'Lo que aporto a un equipo',
+      description:
+        'Genero más valor donde operación, datos industriales y entrega de software tienen que avanzar juntos.',
+      stackTitle: 'Herramientas con las que entrego',
+      groups: [
+        { title: 'Frontend', items: ['React 19', 'Next.js', 'TypeScript', 'Vite', 'TanStack Query', 'Tailwind CSS', 'React Native · Expo', 'Electron'] },
+        { title: 'Backend', items: ['Node.js', 'Express', 'Fastify', 'Python', 'FastAPI', 'Socket.IO · WebSocket', 'REST · OpenAPI', 'Autenticación JWT'] },
+        { title: 'Datos', items: ['PostgreSQL', 'Redis', 'Modelado de datos', 'Pipelines ETL', 'Power BI', 'D3.js', 'Automatización de Excel'] },
+        { title: 'Industrial', items: ['OEE', 'Modbus TCP', 'EUROMAP63', 'Lectura de PLC', 'Etiquetas Zebra ZPL', 'Trazabilidad por lote'] },
+        { title: 'Calidad y entrega', items: ['TDD', 'Arquitectura hexagonal', 'Vitest · pytest', 'Playwright', 'Docker', 'Google Cloud', 'GitHub Actions'] },
+        { title: 'IT y gestión', items: ['Git · GitHub', 'Jira', 'Microsoft 365', 'Cisco Meraki', 'Presupuestos y proveedores', 'Dirección de desarrolladores'] },
+      ],
+      languagesTitle: 'Idiomas',
+      languages: ['Español — nativo', 'Inglés — nivel profesional de trabajo'],
     },
     experience: {
       eyebrow: 'Experiencia',
@@ -1030,27 +1436,30 @@ export const contentByLanguage = {
       description: 'Manufactura, data engineering y analítica orientada a resultados de negocio.',
       items: [
         {
-          company: 'Chunil Mexico',
-          role: 'Data Engineer · MES & Manufacturing Analytics',
-          period: 'Oct 2024 — Actualidad',
+          company: 'Chunil México',
+          role: 'IT Supervisor · responsable de la plataforma MES / ERP',
+          period: 'Nov 2024 — Actualidad',
+          location: 'San Luis Potosí',
           summary:
-            'Diseñé y entregué un MES y un ERP productivos para una planta de inyección: integración industrial, backend, analítica y apps React para shopfloor.',
+            'Proveedor automotriz coreano de inyección y ensamble de plástico. Construí in-house la plataforma MES / ERP de la planta y administro sus proyectos de IT de punta a punta: requisitos, proveedores, presupuesto, implementación y reporte a la dirección.',
           bullets: [
-            'Centralicé inyección, ensamble, EPC, tooling y operación de planta en una sola plataforma web.',
-            'Integré 34 máquinas a dashboards en tiempo real, análisis histórico y lógica de downtime.',
-            'Reconocido como Mejor Empleado del Departamento del Año.',
+            'Entregué el MES ~62% por debajo de su presupuesto aprobado de US$118K con desarrollo in-house; levanté requisitos con Producción, Calidad, RH y Finanzas y cerré formalmente el proyecto en julio de 2026 con reporte a la dirección y al CEO en Corea.',
+            'Conecté el 100% de la planta —34 inyectoras por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres— a un solo modelo de datos para 6 áreas, con ~90% menos captura manual de producción.',
+            'Lideré el proyecto de trazabilidad de punta a punta (de la resina al producto final): caso de negocio y BOM para 66 puntos, comparativo de proveedores frente a cotizaciones de US$206K–280K y presupuesto en dos etapas aprobado por HQ en septiembre de 2026; piloto en ejecución en piso.',
+            'Contraté y dirijo a dos desarrolladores; administro el IT de planta: Microsoft 365, firewall Cisco Meraki, switches administrables, servidores y respaldos en NAS.',
           ],
         },
         {
-          company: 'Ramirez Valle & Asociados · General Motors SLP',
+          company: 'Ramírez Valle & Asociados · General Motors SLP',
           role: 'Claims, Loss & Recovery Coordinator',
-          period: 'Oct 2023 — 2024',
+          period: 'Oct 2023 — Nov 2024',
+          location: 'San Luis Potosí',
           summary:
             'Analítica operativa enfocada en recuperación financiera, gestión de evidencia y visibilidad ejecutiva.',
           bullets: [
-            'Lideré análisis data-driven de claims logísticos y recuperación financiera.',
+            'Recuperé MX$15.2M en reclamaciones logísticas en un año con análisis estructurado de casos.',
             'Construí dashboards Power BI que redujeron 40% el tiempo de análisis.',
-            'Estructuré flujos de evidencia y seguimiento para más de 100 casos.',
+            'Gestioné más de 100 investigaciones con flujos estructurados de evidencia y seguimiento.',
           ],
         },
       ],
@@ -1071,7 +1480,7 @@ export const contentByLanguage = {
         {
           title: 'KeepCoding',
           kicker: 'Formación avanzada',
-          text: 'Bootcamp aplicado a proyectos reales de datos, IA y desarrollo full-stack.',
+          text: 'Bootcamp Full Stack Web Development (2025–2026) con el proyecto final calificado 9.5/10, después del Bootcamp de Big Data, IA y Machine Learning (2023–2024).',
           image: portfolioAssets.keepCoding,
           alt: 'Certificación de KeepCoding',
           publicationUrl: contactLinks.linkedin,
@@ -1087,9 +1496,9 @@ export const contentByLanguage = {
       ],
     },
     extraProjects: {
-      eyebrow: 'Proyectos Bootcamp',
-      title: 'Extras de KeepCoding',
-      description: 'Proyectos seleccionados de mi repositorio del Bootcamp de Desarrollo Web de KeepCoding — desde fundamentos de JavaScript hasta una API REST con pruebas end-to-end.',
+      eyebrow: 'Más del bootcamp',
+      title: 'Proyectos anteriores de KeepCoding',
+      description: 'De fundamentos de JavaScript a una API REST con pruebas de punta a punta: el camino que llevó a OEE Live.',
       linkLabel: 'Abrir en GitHub',
       items: [
         {
@@ -1136,36 +1545,30 @@ export const contentByLanguage = {
     },
     education: {
       eyebrow: 'Educación',
-      title: 'Formación y stack principal',
-      description: 'Base académica y técnica aplicada a manufactura y analítica.',
-      educationTitle: 'Formación',
-      stackTitle: 'Stack principal',
-      languagesTitle: 'Idiomas',
+      title: 'Economía, ingeniería y dos bootcamps',
+      description: 'Una base académica en economía e ingeniería industrial, al día con formación técnica práctica.',
       items: [
-        'Bootcamp Full Stack Web Development, KeepCoding · Nov 2025 — Actualidad',
-        'Business Analytics, Tecnológico de Monterrey · Ene 2025 — Abr 2025',
-        'Bootcamp Big Data, AI & Machine Learning, KeepCoding · Jun 2023 — Jun 2024',
-        'Python for Data Science, IICO · May 2022 — Ago 2022',
-        'Licenciatura en Economía, UASLP · Ago 2018 — Jul 2023',
-        'Ingeniería Industrial y Logística, UNID · Ago 2014 — Jul 2017',
+        { title: 'Bootcamp Full Stack Web Development', school: 'KeepCoding', period: 'Nov 2025 — Oct 2026', note: 'Proyecto final OEE Live · 9.5/10' },
+        { title: 'Business Analytics', school: 'Tecnológico de Monterrey', period: 'Ene 2025 — Abr 2025' },
+        { title: 'Bootcamp Big Data, IA y Machine Learning', school: 'KeepCoding', period: 'Jun 2023 — Jun 2024' },
+        { title: 'Python for Data Science', school: 'IICO', period: 'May 2022 — Ago 2022' },
+        { title: 'Licenciatura en Economía', school: 'UASLP', period: 'Ago 2018 — Jul 2023' },
+        { title: 'Ingeniería Industrial y Logística', school: 'UNID', period: '2020 — 2023' },
       ],
-      stack: [
-        'PostgreSQL', 'SQL', 'Node.js', 'React', 'Vite', 'REST APIs',
-        'Socket.IO', 'ETL', 'Power BI', 'OEE', 'Modbus', 'EUROMAP63',
-      ],
-      languages: ['Español — Nativo', 'Inglés — Nivel profesional de trabajo'],
     },
     closing: {
-      eyebrow: 'Disponible para colaborar',
-      title: 'Si tu operación necesita correr sobre mejores sistemas, ahí es exactamente donde encajo.',
+      eyebrow: 'Hablemos',
+      title: '¿Buscas a alguien que entregue software que una planta de verdad usa?',
       description:
-        'Independiente o en empresa — puedo liderar MES, Industrial IoT, dashboards, Power BI, automatización de reportes y aplicaciones conectadas de manufactura.',
+        'Abierto a puestos de full stack, data engineering y MES / IoT industrial. El correo es la forma más rápida de contactarme, y mi CV está a un clic.',
       primary: 'Escríbeme',
-      quaternary: 'LinkedIn',
+      cv: 'Descargar CV',
+      linkedin: 'LinkedIn',
+      github: 'GitHub',
     },
     footer: {
-      role: 'Data Engineer · Industrial IoT · Sistemas de manufactura',
-      builtWith: 'Hecho con React + Vite + Framer Motion',
+      role: 'Data Engineer · Full Stack · IoT industrial',
+      builtWith: 'Hecho con React, Vite y Framer Motion',
     },
   },
 };

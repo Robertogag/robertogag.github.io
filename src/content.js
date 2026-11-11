@@ -146,7 +146,7 @@ export const contentByLanguage = {
       ],
       titleTail: 'that run on live data.',
       description:
-        "I'm Juan Roberto García Gómez, IT Supervisor at Chunil México. I built the plant's MES / ERP platform in-house — 62% under its approved budget — and I run its IT projects end to end, from requirements and vendors to the pilot on the floor. I've also just shipped two live products of my own.",
+        "I'm Juan Roberto García Gómez, IT Supervisor at Chunil México. I designed and led the in-house development of the plant's MES / ERP platform — 62% under its approved budget — and I run its IT projects end to end, from requirements and vendors to the pilot on the floor. I've also just shipped two live products of my own.",
       primaryAction: 'See live projects',
       secondaryAction: 'Download CV',
       linkedin: 'LinkedIn',
@@ -324,9 +324,9 @@ export const contentByLanguage = {
         'Every number below comes from systems running in production at a plastic injection molding plant in San Luis Potosí.',
       stats: [
         {
-          value: '100%',
-          label: 'of the plant connected',
-          detail: '34 injection machines (ENGEL, WOOJIN, SUMITOMO) over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 handheld scanners.',
+          value: '68',
+          label: 'machines, stations and scanners connected',
+          detail: 'Every device in project scope: 34 injection machines (ENGEL, WOOJIN, SUMITOMO) over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 handheld scanners.',
         },
         {
           value: '62%',
@@ -714,10 +714,10 @@ export const contentByLanguage = {
           period: 'Nov 2024 — Present',
           location: 'San Luis Potosí',
           summary:
-            'Korean automotive supplier, plastic injection molding and assembly. I built the plant’s MES / ERP platform in-house and manage its IT projects end to end — requirements, vendors, budget, rollout and reporting to leadership.',
+            'Korean automotive supplier, plastic injection molding and assembly. I designed and led the in-house development of the plant’s MES / ERP platform and manage its IT projects end to end — requirements, vendors, budget, rollout and reporting to leadership.',
           bullets: [
             'Delivered the MES ~62% under its approved budget by building in-house; gathered requirements with Production, Quality, HR and Finance and closed the project formally in July 2026 with a report to plant leadership and the CEO in Korea.',
-            'Connected 100% of the plant — 34 injection machines over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 scanners — into one data model for 6 areas, cutting manual production reporting by ~90%.',
+            'Connected every machine in project scope — 34 injection machines over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 scanners — into one data model for 6 areas, cutting manual production reporting by ~90%.',
             'Leading the end-to-end traceability program (resin to finished good), now in pilot stage: business case and BOM for 66 planned traceability points, a vendor comparison against external integrator quotes, and a two-stage budget (pilot, then fleet) approved by HQ in September 2026.',
             'Hired and now lead two developers; run plant IT — Microsoft 365, Cisco Meraki firewall, managed switches, servers and NAS backups.',
           ],
@@ -730,7 +730,7 @@ export const contentByLanguage = {
           summary:
             'Operational analytics focused on financial recovery, evidence management and executive visibility.',
           bullets: [
-            'Recovered MX$15.2M in logistics claims within one year through structured case analysis.',
+            'Recovered MX$10.2M in logistics claims within one year through structured case analysis.',
             'Built Power BI dashboards that cut analysis time by 40%.',
             'Managed 100+ investigations with structured evidence and tracking workflows.',
           ],
@@ -883,7 +883,7 @@ export const contentByLanguage = {
       ],
       titleTail: 'que corren con datos en vivo.',
       description:
-        'Soy Juan Roberto García Gómez, IT Supervisor en Chunil México. Construí in-house la plataforma MES / ERP de la planta —62% por debajo de su presupuesto aprobado— y administro sus proyectos de IT de punta a punta, desde los requisitos y los proveedores hasta el piloto en piso. Además acabo de lanzar dos productos propios que ya están en línea.',
+        'Soy Juan Roberto García Gómez, IT Supervisor en Chunil México. Diseñé y dirigí el desarrollo in-house de la plataforma MES / ERP de la planta —62% por debajo de su presupuesto aprobado— y administro sus proyectos de IT de punta a punta, desde los requisitos y los proveedores hasta el piloto en piso. Además acabo de lanzar dos productos propios que ya están en línea.',
       primaryAction: 'Ver proyectos en vivo',
       secondaryAction: 'Descargar CV',
       linkedin: 'LinkedIn',
@@ -1061,9 +1061,9 @@ export const contentByLanguage = {
         'Cada número proviene de sistemas en producción en una planta de moldeo por inyección de plástico en San Luis Potosí.',
       stats: [
         {
-          value: '100%',
-          label: 'de la planta conectada',
-          detail: '34 inyectoras (ENGEL, WOOJIN, SUMITOMO) por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres de mano.',
+          value: '68',
+          label: 'máquinas, estaciones y escáneres conectados',
+          detail: 'Todo el equipo del alcance del proyecto: 34 inyectoras (ENGEL, WOOJIN, SUMITOMO) por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres de mano.',
         },
         {
           value: '62%',
@@ -1451,10 +1451,10 @@ export const contentByLanguage = {
           period: 'Nov 2024 — Actualidad',
           location: 'San Luis Potosí',
           summary:
-            'Proveedor automotriz coreano de moldeo por inyección de plástico y ensamble. Construí in-house la plataforma MES / ERP de la planta y administro sus proyectos de IT de punta a punta: requisitos, proveedores, presupuesto, implementación y reporte a la dirección.',
+            'Proveedor automotriz coreano de moldeo por inyección de plástico y ensamble. Diseñé y dirigí el desarrollo in-house de la plataforma MES / ERP de la planta y administro sus proyectos de IT de punta a punta: requisitos, proveedores, presupuesto, implementación y reporte a la dirección.',
           bullets: [
             'Entregué el MES ~62% por debajo de su presupuesto aprobado con desarrollo in-house; levanté requisitos con Producción, Calidad, RH y Finanzas y cerré formalmente el proyecto en julio de 2026 con reporte a la dirección y al CEO en Corea.',
-            'Conecté el 100% de la planta —34 inyectoras por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres— a un solo modelo de datos para 6 áreas, con ~90% menos captura manual de producción.',
+            'Conecté todo el equipo del alcance del proyecto —34 inyectoras por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres— a un solo modelo de datos para 6 áreas, con ~90% menos captura manual de producción.',
             'Lidero el programa de trazabilidad de punta a punta (de la resina al producto final), hoy en etapa piloto: caso de negocio y BOM para 66 puntos de trazabilidad planeados, comparativo de proveedores frente a cotizaciones de integradores externos y presupuesto en dos etapas (piloto y luego flota) aprobado por HQ en septiembre de 2026.',
             'Contraté y dirijo a dos desarrolladores; administro el IT de planta: Microsoft 365, firewall Cisco Meraki, switches administrables, servidores y respaldos en NAS.',
           ],
@@ -1467,7 +1467,7 @@ export const contentByLanguage = {
           summary:
             'Analítica operativa enfocada en recuperación financiera, gestión de evidencia y visibilidad ejecutiva.',
           bullets: [
-            'Recuperé MX$15.2M en reclamaciones logísticas en un año con análisis estructurado de casos.',
+            'Recuperé MX$10.2M en reclamaciones logísticas en un año con análisis estructurado de casos.',
             'Construí dashboards Power BI que redujeron 40% el tiempo de análisis.',
             'Gestioné más de 100 investigaciones con flujos estructurados de evidencia y seguimiento.',
           ],

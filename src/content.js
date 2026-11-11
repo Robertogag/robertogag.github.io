@@ -105,6 +105,7 @@ export const portfolioAssets = {
   // Recognition
   gm: '/assets/images/highlights/gm.jpg',
   keepCoding: '/assets/images/highlights/keepcoding.jpg',
+  keepCodingFullStack: '/assets/images/highlights/keepcoding-fullstack.jpg',
   award: '/assets/images/highlights/department-employee-of-the-year.jpg',
   bootcampBookshop: '/assets/images/bootcamp/bookshop-api-tests.png',
   bootcampReactDashboard: '/assets/images/bootcamp/react-product-dashboard.png',
@@ -749,11 +750,11 @@ export const contentByLanguage = {
           publicationUrl: contactLinks.linkedin,
         },
         {
-          title: 'KeepCoding',
-          kicker: 'Advanced training',
-          text: 'Full Stack Web Development bootcamp (2025–2026) with the final project graded 9.5/10, after the Big Data, AI & Machine Learning bootcamp (2023–2024).',
-          image: portfolioAssets.keepCoding,
-          alt: 'KeepCoding certification',
+          title: 'KeepCoding Full Stack',
+          kicker: 'Certification · Oct 2026',
+          text: 'Completed Full Stack Web Development (Edition 20, Nov 2025 – Oct 2026), with the final project OEE Live graded 9.5/10. Follows the Big Data, AI & Machine Learning bootcamp (2023–2024).',
+          image: portfolioAssets.keepCodingFullStack,
+          alt: 'KeepCoding Full Stack Web Development certificate, Edition 20',
           publicationUrl: contactLinks.linkedin,
         },
         {
@@ -1478,11 +1479,11 @@ export const contentByLanguage = {
           publicationUrl: contactLinks.linkedin,
         },
         {
-          title: 'KeepCoding',
-          kicker: 'Formación avanzada',
-          text: 'Bootcamp Full Stack Web Development (2025–2026) con el proyecto final calificado 9.5/10, después del Bootcamp de Big Data, IA y Machine Learning (2023–2024).',
-          image: portfolioAssets.keepCoding,
-          alt: 'Certificación de KeepCoding',
+          title: 'KeepCoding Full Stack',
+          kicker: 'Certificación · oct 2026',
+          text: 'Formación en Desarrollo Web Full Stack terminada (Edición 20, nov 2025 – oct 2026), con el proyecto final OEE Live calificado 9.5/10. Antes cursé el Bootcamp de Big Data, IA y Machine Learning (2023–2024).',
+          image: portfolioAssets.keepCodingFullStack,
+          alt: 'Certificado de KeepCoding en Desarrollo Web Full Stack, Edición 20',
           publicationUrl: contactLinks.linkedin,
         },
         {

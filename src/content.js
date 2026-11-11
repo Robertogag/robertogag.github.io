@@ -247,7 +247,7 @@ export const contentByLanguage = {
       eyebrow: 'In production at Chunil México',
       title: 'The systems a plant runs on, every shift',
       description:
-        'Built and maintained inside a real plastic-injection and assembly plant in San Luis Potosí. Pick a system to explore its screens.',
+        'Built and maintained inside a real plastic injection molding and assembly plant in San Luis Potosí. Pick a system to explore its screens.',
       tabs: {
         mes: 'MES',
         kiosk: 'Traceability kiosks',
@@ -264,7 +264,7 @@ export const contentByLanguage = {
       description:
         'Electron + React + TypeScript kiosks on the production lines, designed for gloves, glare and a 2 m reading distance. The machine counts the pieces; the kiosk prints each box label, books NG by stage and links every material lot — through the same inventory engine the scanner apps use.',
       footnote:
-        'Shown with demo data. One universal kiosk configured by stages from the bill of materials — no per-product code — backed by 4,500+ automated tests.',
+        'Shown with demo data. One universal kiosk configured by stages from the bill of materials — no per-product code — backed by 4,000+ automated tests.',
       gallery: [
         {
           title: 'Operation',
@@ -321,7 +321,7 @@ export const contentByLanguage = {
       eyebrow: 'Impact',
       title: 'Outcomes, not just screens',
       description:
-        'Every number below comes from systems running in production at a plastic-injection plant in San Luis Potosí.',
+        'Every number below comes from systems running in production at a plastic injection molding plant in San Luis Potosí.',
       stats: [
         {
           value: '100%',
@@ -331,7 +331,7 @@ export const contentByLanguage = {
         {
           value: '62%',
           label: 'under the approved budget',
-          detail: 'Delivered against an approved US$118K budget by building in-house; vendors only handled legacy-PLC integration and cabling.',
+          detail: 'Delivered ~62% under the approved budget by building in-house; vendors only handled legacy-PLC integration and cabling.',
         },
         {
           value: '90%',
@@ -714,12 +714,12 @@ export const contentByLanguage = {
           period: 'Nov 2024 — Present',
           location: 'San Luis Potosí',
           summary:
-            'Korean automotive supplier, plastic injection and assembly. I built the plant’s MES / ERP platform in-house and manage its IT projects end to end — requirements, vendors, budget, rollout and reporting to leadership.',
+            'Korean automotive supplier, plastic injection molding and assembly. I built the plant’s MES / ERP platform in-house and manage its IT projects end to end — requirements, vendors, budget, rollout and reporting to leadership.',
           bullets: [
-            'Delivered the MES ~62% under its approved US$118K budget by building in-house; gathered requirements with Production, Quality, HR and Finance and closed the project formally in July 2026 with a report to plant leadership and the CEO in Korea.',
+            'Delivered the MES ~62% under its approved budget by building in-house; gathered requirements with Production, Quality, HR and Finance and closed the project formally in July 2026 with a report to plant leadership and the CEO in Korea.',
             'Connected 100% of the plant — 34 injection machines over EUROMAP63 and Modbus, 14 assembly stations over PLC and 20 scanners — into one data model for 6 areas, cutting manual production reporting by ~90%.',
-            'Led the end-to-end traceability project (resin to finished good): business case and BOM for 66 points, a vendor comparison against US$206K–280K quotes, and a two-stage budget approved by HQ in September 2026; pilot running on the floor.',
-            'Hired and lead two developers; run plant IT — Microsoft 365, Cisco Meraki firewall, managed switches, servers and NAS backups.',
+            'Leading the end-to-end traceability program (resin to finished good), now in pilot stage: business case and BOM for 66 planned traceability points, a vendor comparison against external integrator quotes, and a two-stage budget (pilot, then fleet) approved by HQ in September 2026.',
+            'Hired and now lead two developers; run plant IT — Microsoft 365, Cisco Meraki firewall, managed switches, servers and NAS backups.',
           ],
         },
         {
@@ -743,11 +743,11 @@ export const contentByLanguage = {
       publicationLabel: 'View on LinkedIn',
       items: [
         {
-          title: 'Department Employee of the Year',
+          title: 'Department Employee of the Year 2025',
           kicker: 'Recognition',
           text: 'Recognized at Chunil Mexico for discipline, execution and measurable contribution.',
           image: portfolioAssets.award,
-          alt: 'Department Employee of the Year recognition',
+          alt: 'Department Employee of the Year 2025 recognition',
           publicationUrl: contactLinks.linkedin,
         },
         {
@@ -984,7 +984,7 @@ export const contentByLanguage = {
       eyebrow: 'En producción en Chunil México',
       title: 'Los sistemas con los que opera una planta, cada turno',
       description:
-        'Construidos y mantenidos dentro de una planta real de inyección y ensamble de plástico en San Luis Potosí. Elige un sistema para ver sus pantallas.',
+        'Construidos y mantenidos dentro de una planta real de moldeo por inyección de plástico y ensamble en San Luis Potosí. Elige un sistema para ver sus pantallas.',
       tabs: {
         mes: 'MES',
         kiosk: 'Kioscos de trazabilidad',
@@ -1001,7 +1001,7 @@ export const contentByLanguage = {
       description:
         'Kioscos en Electron + React + TypeScript en las líneas de producción, pensados para guantes, reflejos y lectura a 2 m. La máquina cuenta las piezas; el kiosco imprime la etiqueta de cada caja, registra el NG por etapa y relaciona cada lote de material, todo a través del mismo motor de inventario que usan las apps de escaneo.',
       footnote:
-        'Pantallas con datos de demostración. Un solo kiosco universal configurado por etapas a partir de la lista de materiales, sin código por producto, respaldado por más de 4,500 pruebas automatizadas.',
+        'Pantallas con datos de demostración. Un solo kiosco universal configurado por etapas a partir de la lista de materiales, sin código por producto, respaldado por más de 4,000 pruebas automatizadas.',
       gallery: [
         {
           title: 'Operación',
@@ -1058,7 +1058,7 @@ export const contentByLanguage = {
       eyebrow: 'Impacto',
       title: 'Resultados, no solo pantallas',
       description:
-        'Cada número proviene de sistemas en producción en una planta de inyección de plástico en San Luis Potosí.',
+        'Cada número proviene de sistemas en producción en una planta de moldeo por inyección de plástico en San Luis Potosí.',
       stats: [
         {
           value: '100%',
@@ -1068,7 +1068,7 @@ export const contentByLanguage = {
         {
           value: '62%',
           label: 'por debajo del presupuesto aprobado',
-          detail: 'Entregado contra un presupuesto aprobado de US$118K gracias al desarrollo in-house; los proveedores solo hicieron la integración de PLC antiguos y el cableado.',
+          detail: 'Entregado ~62% por debajo del presupuesto aprobado gracias al desarrollo in-house; los proveedores solo hicieron la integración de PLC antiguos y el cableado.',
         },
         {
           value: '90%',
@@ -1451,11 +1451,11 @@ export const contentByLanguage = {
           period: 'Nov 2024 — Actualidad',
           location: 'San Luis Potosí',
           summary:
-            'Proveedor automotriz coreano de inyección y ensamble de plástico. Construí in-house la plataforma MES / ERP de la planta y administro sus proyectos de IT de punta a punta: requisitos, proveedores, presupuesto, implementación y reporte a la dirección.',
+            'Proveedor automotriz coreano de moldeo por inyección de plástico y ensamble. Construí in-house la plataforma MES / ERP de la planta y administro sus proyectos de IT de punta a punta: requisitos, proveedores, presupuesto, implementación y reporte a la dirección.',
           bullets: [
-            'Entregué el MES ~62% por debajo de su presupuesto aprobado de US$118K con desarrollo in-house; levanté requisitos con Producción, Calidad, RH y Finanzas y cerré formalmente el proyecto en julio de 2026 con reporte a la dirección y al CEO en Corea.',
+            'Entregué el MES ~62% por debajo de su presupuesto aprobado con desarrollo in-house; levanté requisitos con Producción, Calidad, RH y Finanzas y cerré formalmente el proyecto en julio de 2026 con reporte a la dirección y al CEO en Corea.',
             'Conecté el 100% de la planta —34 inyectoras por EUROMAP63 y Modbus, 14 estaciones de ensamble por PLC y 20 escáneres— a un solo modelo de datos para 6 áreas, con ~90% menos captura manual de producción.',
-            'Lideré el proyecto de trazabilidad de punta a punta (de la resina al producto final): caso de negocio y BOM para 66 puntos, comparativo de proveedores frente a cotizaciones de US$206K–280K y presupuesto en dos etapas aprobado por HQ en septiembre de 2026; piloto en ejecución en piso.',
+            'Lidero el programa de trazabilidad de punta a punta (de la resina al producto final), hoy en etapa piloto: caso de negocio y BOM para 66 puntos de trazabilidad planeados, comparativo de proveedores frente a cotizaciones de integradores externos y presupuesto en dos etapas (piloto y luego flota) aprobado por HQ en septiembre de 2026.',
             'Contraté y dirijo a dos desarrolladores; administro el IT de planta: Microsoft 365, firewall Cisco Meraki, switches administrables, servidores y respaldos en NAS.',
           ],
         },
@@ -1480,11 +1480,11 @@ export const contentByLanguage = {
       publicationLabel: 'Ver en LinkedIn',
       items: [
         {
-          title: 'Mejor empleado del departamento del año',
+          title: 'Mejor empleado del departamento del año 2025',
           kicker: 'Reconocimiento',
           text: 'Reconocimiento en Chunil Mexico por disciplina, ejecución e impacto medible.',
           image: portfolioAssets.award,
-          alt: 'Reconocimiento al mejor empleado del departamento del año',
+          alt: 'Reconocimiento al mejor empleado del departamento del año 2025',
           publicationUrl: contactLinks.linkedin,
         },
         {
